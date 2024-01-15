@@ -1,0 +1,75 @@
+<ion-header no-border>
+
+    <ion-navbar color="header">
+        <ion-title class="header-title">{{titulo}}</ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only (click)="openHelp()">
+                <ion-icon name="help-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid class="grid-profile">
+
+        <ion-row class="informacoes-body">
+            <ion-col col-12>
+                <div class="info"><p>ATENÇÃO</p><p>Você deve adicionar um cartão do tipo CRÉDITO.</p></div>
+            </ion-col>
+
+            <form [formGroup]="formGroup" (ngSubmit)="submit()" class="informacoes-body-list">
+                <ion-item class="informacoes-body-list-item" no-lines>
+                    <ion-label ><ion-icon name="ios-contact-outline"></ion-icon></ion-label>
+                    <ion-input type="text" #nome id="nome" formControlName="nome"  class="{{item.nome?'blue-component':'grey-component'}}" [(ngModel)]="item.nome" placeholder="Nome do Titular"
+                        (input)="nome.value=$event.target.value.toUpperCase()"></ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{item.nome?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+                </ion-item>
+                <ion-item class="informacoes-body-list-item" no-lines>
+
+                    <ion-label >
+                        <ion-icon name="ios-card-outline"></ion-icon>
+                    </ion-label>
+                    <ion-input type="tel" #numero formControlName="numero" placeholder="Número do Cartão" [(ngModel)]="item.numero" id="numero" class="{{item.numero?'blue-component':'grey-component'}}">
+                    </ion-input>
+                    <!-- <button ion-button icon-only type="button" item-right clear (click)="scan()" class="scan">
+                        <ion-icon name="camera" class="icon"></ion-icon>
+                    </button>  -->
+                    <button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{item.numero?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+                </ion-item>
+                <ion-item class="informacoes-body-list-item" no-lines>
+                    <ion-label ><ion-icon name="ios-calendar-outline"></ion-icon></ion-label>
+                    <ion-input type="tel" formControlName="data" [(ngModel)]="item.data" [brmasker]="{mask:'00/0000', len:7, type:'num'}" #data id="data" class="{{item.data?'blue-component':'grey-component'}}" placeholder="Validade: MM/AAAA">
+                    </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{item.data?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+                    <!--<ion-datetime #data id="data" [(min)]="dataMin" [(max)]="dataMax" displayFormat="MM/YYYY"
+                        pickerFormat="MM YYYY" formControlName="data" [(ngModel)]="item.data" cancelText="Cancelar"
+                        doneText="Definir"></ion-datetime> -->
+                </ion-item>
+                <!-- <ion-item class="informacoes-body-list-item" no-lines>
+                    <ion-label ><ion-icon name="ios-lock-outline"></ion-icon></ion-label>
+                    <ion-input type="text" #ccv id="ccv" formControlName="ccv" placeholder="Código CCV" class="{{item.ccv?'blue-component':'grey-component'}}" [(ngModel)]="item.ccv">
+                    </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{item.ccv?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+                </ion-item> -->
+                
+
+                <ion-item class="informacoes-body-list-item" no-lines>
+                    <ion-label ><ion-icon name="ios-person-outline"></ion-icon></ion-label>
+                    <ion-input type="tel" #cpf id="cpf" formControlName="cpf" placeholder="CPF do titular"  class="{{item.numero?'blue-component':'grey-component'}}" [(ngModel)]="item.cpf"
+                        [brmasker]="{mask:'000.000.000-00', len:14, type:'num'}"></ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{item.cpf?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+                </ion-item>
+
+
+                <div class="btn-margin">
+                    <ion-item class="btn-row" no-lines>
+                        <button ion-button type="submit" class="btn" block>Salvar</button>
+                    </ion-item>
+                </div>
+            </form>
+
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

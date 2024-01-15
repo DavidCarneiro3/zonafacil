@@ -1,0 +1,77 @@
+page-estacionados-modal {
+  .scroll-content{
+    font-family: "kanit";
+    background-color: #f7f7f7;
+  }
+  
+
+  ion-buttons:hover {
+    cursor: pointer;
+  }
+
+  .header-icon {
+    color: #fff;
+  }
+  .item-md{
+    // background-color: #4f4f4f;
+    color: #3F65FF !important;
+  }
+  .item-radio.item-md ion-label {
+    // background-color: #4f4f4f;
+    text-align: start;
+    .titulo{
+      color: #3F65FF !important;
+    }
+    .subtitulo{
+      color: #fff !important;
+    }
+    
+  }
+
+  .item-radio.item-ios ion-label {
+    // background-color: #4f4f4f;
+    text-align: start;
+    .titulo{
+      color: #3F65FF !important;
+    }
+    .titulo{
+      color: #fff !important;
+    }
+  }
+
+  .titulo {
+    color: #666;
+  }
+
+  .subtitulo {
+    color: #8c8c8c;
+    font-weight: normal;
+  }
+  .footer{
+    // background-color: #333333;
+    .toolbar-background-md {
+      // background: #333333;
+  }
+      
+    .btn-rows{
+      // background-color: #333333;
+      .btn{
+          border: none !important;
+          background: #CFA138;
+          border-radius: 26px;
+          height: 35px;
+          margin-top: 5px;
+          color: #000;
+      }
+      .btn-cancelar{
+          border: 2px solid #BDBDBD !important;
+          background: transparent;
+          color: #fff;
+          border-radius: 26px;
+          height: 35px;
+          margin-top: 5px;
+      }
+    }
+    
+  }
+}

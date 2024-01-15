@@ -1,0 +1,24 @@
+<ion-header no-border text-center>
+    <ion-navbar color="header" text-center>
+        <ion-title>
+            <ion-label>
+                Permissão Requerida
+            </ion-label>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <p class="conteudo-titulo">
+        {{title}}
+    </p>
+    <p class="conteudo-texto">
+        {{reason}}
+    </p>
+</ion-content>
+
+<ion-footer class="footer">
+    <ion-toolbar>
+        <button ion-button block (click)="askPermissions()" mode="md">Continuar</button>
+    </ion-toolbar>
+</ion-footer>

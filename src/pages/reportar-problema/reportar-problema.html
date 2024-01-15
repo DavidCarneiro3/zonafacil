@@ -1,0 +1,38 @@
+<ion-header no-border>
+    <ion-navbar color="header">
+        <button ion-button icon-only menuToggle>
+            <ion-icon class="header-icon" name="menu"></ion-icon>
+        </button>
+
+        <ion-title class="header-title">Reportar Problema</ion-title>
+        
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+    <ion-grid>
+        <ion-row class="row-header">
+            <ion-col col-12 class="col-header">
+                <ion-label class="title"></ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <form [formGroup]="formGroup" (ngSubmit)="sendData()" class="informacoes-body-list">
+                <ion-item class="informacoes-body-list-item" no-lines>
+                    <ion-label ><ion-icon name="ios-help-circle-outline"></ion-icon></ion-label>
+                    <ion-input type="text" mode="ios" formControlName="subject" placeholder="Assunto" class="{{formGroup.controls.subject.valid?'blue-component':'grey-component'}}">
+
+                    </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{formGroup.controls.subject.valid?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+                </ion-item>
+                <ion-item class="informacoes-body-list-item" no-lines>
+                    <ion-label><ion-icon name="ios-mail-outline"></ion-icon></ion-label>
+                    <ion-textarea type="text" mode="ios" rows="4" formControlName="message" placeholder="Mensagem" class="{{formGroup.controls.message.valid?'blue-component':'grey-component'}}"></ion-textarea>
+                    <button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{formGroup.controls.message.valid?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+                </ion-item>
+                <ion-item class="btn-row" no-lines>
+                    <button ion-button type="submit" class="btn" block>Enviar</button>
+                </ion-item>
+            </form>
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,278 @@
+page-veiculos-form {
+
+  font-family: 'kanit';
+  .scroll-content{
+    background-color: #e5e5e5;
+  }
+
+  .bar-button-default {
+      color: #fff !important;
+  }
+  .block-true{
+      display: block;
+  }
+
+  .header-title {
+    width: 250px;
+  }
+
+  .content {
+  
+      .grid-profile {
+          width: 100%;
+          
+          .informacoes-body {
+            
+              position: absolute;
+              top: 15px;
+              left: 0;
+              right: 0;
+      
+              .informacoes-body-header {
+              
+                  padding-top: 30px;
+          
+                  .title-header-body {
+                    
+                      text-align: left;
+                      color: #8c8c8c;
+                      margin-left: 10px;
+                      font-weight: 500;
+                  }
+              }
+
+              
+
+              .radio-row{
+                align-items: stretch
+              }
+              .carro{
+                  margin-left: 15%;
+                  margin-top: 6%;
+              }
+              .grey{
+                  color: #828282;
+              }
+              .blue{
+                  color: #4c43f4;
+              }
+              div > span{
+                  padding: -5px;
+                  align-self:center;
+              }
+              .ppadrao{
+                  margin-left: 15%;
+              }
+              .controls {
+                margin-top: 10px;
+                margin-left: 16%;
+                width: 68%;
+                background-color: #fff;
+                // color: #FFD400;
+              }
+
+              #mic {
+                position: absolute;
+                //top: 20px;
+                font-weight: bold;
+                color: #fff;
+                margin: 0;
+                right: 10%;
+                width: 25px;
+                height: 25px;
+                background: transparent;
+              }
+              .info-placa{
+                  background-color: #fff;
+                  width: 68%;
+                  height: 50px;
+                  margin-left: 75px;
+                  margin-top: 5px;
+                  ion-input{
+                      font-size: 16px;
+                      border-bottom: 1px solid #ccc;
+                    //   color: #FFD400;
+                  }
+              }
+              .mercosul {
+                  font-size: 10px;
+                  color: #4c43f4;
+                  padding: 50;
+                  left: 30;
+                  margin: auto;
+                  text-align: center
+                  }
+      
+              .informacoes-body-list {
+          
+                  width: 100%;
+
+                  .title{
+                    margin-left: 13%;
+                    margin-top: 20%;
+                    font-size: 12px;
+                    color: #000;
+                }
+                  .tipo-veiculo-text {
+                      color: #0093d4;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+                      align-items: center;
+                      margin-left: 10px;
+                      margin-top: 1px;
+                      
+                      -webkit-transition: all 100ms ease-in;
+                             -moz-transition: all 100ms ease-in;
+                                  transition: all 100ms ease-in;
+                          -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+                             -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+                                  filter: brightness(1.8) grayscale(1) opacity(.7);
+                  }
+
+                  .tipo-veiculo-text-selected {
+                      -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+                             -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+                                  filter: brightness(1.2) grayscale(.5) opacity(.9);
+                  }
+
+                  .tipo-veiculo {
+                      display: inline-block;
+                      height: 100%;
+                      width: 100%;
+                      padding: 5px;
+                      margin-top: -10px;
+                      
+
+                      img{
+                          padding: 5px;
+                          border-radius: 20%;
+                      }
+
+                      img {
+                          text-align: center;
+                          width: 80px;
+                          height: 80px;
+
+                          -webkit-transition: all 100ms ease-in;
+                             -moz-transition: all 100ms ease-in;
+                                  transition: all 100ms ease-in;
+                          -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+                             -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+                                  filter: brightness(1.8) grayscale(1) opacity(.7);
+                      }
+                      .img-selected{
+                          border: 2px solid #0093d4;
+                          -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+                             -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+                                  filter: brightness(1.2) grayscale(.5) opacity(.9);
+                      }
+                      img:active{
+                          opacity: .9;
+                      }
+                  }
+
+                  .informacoes-body-list-item {
+                    background-color: #e5e5e5;
+                      margin-left: 10px;
+                      padding-right: 29px;
+
+                     
+          
+                      ion-label {
+                          text-align: left;
+                          color: #7d7d7d;
+                          font-size: 11px;
+                          font-weight: normal;
+                      }
+                      
+                      ion-input, ion-select, ion-datetime {
+                        //   background-color: #fff;
+                          padding-left: 9px;
+                          color: #747474;
+                          font-size: 13px;
+                          border: 1px solid #c2c2c2;
+                          border-radius: 3px;
+                      }
+                  }
+              }
+          }
+
+          .btn-margin {
+              margin-left: 2%;
+              margin-right: 2%;
+          }
+          
+          .btn-row {
+              margin-top: 3%;
+              margin-bottom: 5%;
+              background-color: #e5e5e5;
+              .btn {
+                border: none !important;
+                background: #27ae60;
+                border-radius: 26px;
+                height: 35px;
+                width: 90%;
+                margin-left: 15px;
+                margin-bottom: 20px;
+                // color: #000000;
+              }
+          }
+      }
+  }
+
+  .success {
+
+      .alert-wrapper {
+          background-color: #00CC99;
+          color: #fff;
+      }
+
+      .alert-message {
+          color: #fff;
+      }
+
+      .alert-button-group {
+          .btn-ok {
+              color: #fff;
+          }
+      }
+  }
+
+  .error {
+ 
+      .alert-wrapper {
+          background-color: #CC0033;
+          color: #fff;
+      }
+
+      .alert-message {
+          color: #fff;
+      }
+
+      .alert-button-group {
+          .btn-ok {
+              color: #fff;
+          }
+      }
+  }
+
+  .info {
+    
+      .alert-wrapper {
+          background-color: #4d90fe;
+          color: #fff;
+      }
+
+      .alert-message {
+          color: #fff;
+      }
+
+      .alert-button-group {
+          .btn-ok {
+              color: #fff;
+          }
+      }
+  }
+
+}

@@ -1,0 +1,63 @@
+<ion-header no-border>
+  <ion-navbar color="header">
+
+    <ion-title>
+      <ion-label>Cancelamento de Transação</ion-label>
+    </ion-title>
+
+    <ion-buttons left>
+      <button ion-button (click)="close()">
+        <span color="light" class="header-text" showWhen="ios">Fechar</span>
+        <ion-icon name="md-arrow-back" class="header-icon" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+
+  <!-- <ion-grid class="grid-profile">
+
+    <ion-row class="informacoes-body">
+      <ion-item class="informacoes-body-header">
+        <ion-label class="title-header-body">CANCELAMENTO DE TRANSAÇÃO</ion-label>
+      </ion-item>
+      <form class="informacoes-body-list">
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label stacked>Motivo do Cancelamento:</ion-label>
+          <ion-textarea placeholder="Digite aqui o motivo do cancelamento..." [(ngModel)]="motivo"
+            [ngModelOptions]="{standalone: true}"></ion-textarea>
+        </ion-item>
+        <ion-item class="btn-row" no-lines>
+          <button ion-button (click)="updateData()" class="btn" block>Enviar</button>
+        </ion-item>
+      </form>
+    </ion-row>
+
+  </ion-grid> -->
+
+  <ion-grid>
+    <ion-row class="row-header">
+        <ion-col col-12 class="col-header">
+            <ion-label class="title"></ion-label>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <form class="informacoes-body-list">
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label><ion-icon name="ios-mail-outline"></ion-icon></ion-label>
+          <ion-textarea type="text" mode="ios" rows="4" placeholder="Motivo do Cancelamento" [(ngModel)]="motivo"
+            [ngModelOptions]="{standalone: true}" class="blue-component"></ion-textarea>
+
+          <button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="icon-blue icon icon-ios ion-ios-checkmark-circle-outline"></ion-icon> </button>
+        </ion-item>
+        <ion-item class="btn-row" no-lines>
+          <button ion-button (click)="updateData()" class="btn" block>Enviar</button>
+        </ion-item>
+      </form>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

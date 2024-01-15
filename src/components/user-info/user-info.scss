@@ -1,0 +1,67 @@
+user-info {
+  .user-menu-item {
+    top: 0;
+    background-color: #243060;
+    color: #fff;
+    font-family: "Roboto";
+    margin: 0 0 10px 0;
+    height: 180px;
+    border-radius: 0 0 2pc 2pc;
+    .button{
+      top: 20px;
+    }
+    .img {
+      @include respond-to(xs) {
+        width: 60px;
+        height: 60px;
+      }
+      @include respond-to(sm) {
+        width: 60px;
+        height: 60px;
+      }
+      @include respond-to(md) {
+        width: 60px;
+        height: 60px;
+      }
+      @include respond-to(lg) {
+        width: 60px;
+        height: 60px;
+      }
+      @include respond-to(xl) {
+        width: 60px;
+        height: 60px;
+      }
+
+      border-radius: 100%;
+      border: 2px solid white;
+    }
+
+    p {
+      color: #fff;
+      font-weight: normal;
+    }
+
+    .name {
+      font-size: 16px;
+      text-transform: capitalize;
+      white-space: pre-wrap;
+      margin-top: 15px;
+    }
+
+    .profile {
+      font-size: 8pt;
+      text-transform: capitalize;
+    }
+
+    .city {
+      font-size: 8pt;
+      text-transform: capitalize;
+    }
+
+    .cads-credits {
+      font-size: 8pt;
+      text-transform: capitalize;
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<ion-header no-border text-center>
+  <ion-navbar color="header" text-center>
+
+    <ion-title>
+      <ion-label>Selecione o bairro</ion-label>
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close" class="header-icon"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-searchbar placeholder="Buscar Bairro" color="secondary" (ionInput)="procurarBairro($event)"></ion-searchbar>
+  <ion-list radio-group>
+    <ion-item *ngFor="let area of areas" text-warp>
+      <ion-label>{{ area.codigo }} - {{area.endereco}}</ion-label>
+      <ion-radio item-left slot="start" (ionSelect)="selectArea(area.codigo)" mode="md"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-toolbar>
+    <ion-title>
+      <ion-row class="btn-rows">
+        <ion-col>
+          <button ion-button block (click)="dismiss()" mode="md">Cancelar</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button block (click)="confirmar()" color="default" [disabled]="codigoArea.length <= 0"
+            mode="md">OK</button>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

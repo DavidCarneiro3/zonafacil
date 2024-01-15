@@ -1,0 +1,98 @@
+page-configuracoes {
+  .header-title{
+    font-family: "kanit";
+    width: 300px;
+    margin-left: -15px;
+  }
+  
+  .header-icon {
+    color: #fff;
+  }
+
+  .scroll-content{
+    font-family: "kanit";
+    background-color: #E5E5E5;
+  }
+
+  
+
+  .content {
+    
+    .row-header {
+      margin-top: -5px;
+      .col-header {
+        background-color: #f1f1f1;
+        //padding: 30px 30px 30px 30px;
+        border-bottom: 1px solid #c6c6c6;
+
+        
+
+        .title {
+          color: #8c8c8c;
+          font-size: 9pt;
+          position: absolute;
+          top: 20px;
+          left: 30px;
+          font-weight: 500;
+        }
+      }
+    }
+    ion-label {
+      color: #6f6f6f;
+      font-size: 12pt;
+      text-align: left;
+      margin-left: 5px;
+    }
+
+    .title-not {
+      margin-top: 15px;
+      color: #828282;
+      font-size: 15px;
+      text-align: left;
+      margin-left: 10px;
+      text-align: justify;
+      white-space: normal;
+    }
+    // .item-list{
+    //   background-color: #4f4f4f;
+    // }
+    .blue{
+      margin-top: 15px;
+      font-size: 15px;
+      text-align: left;
+      margin-left: 10px;
+      text-align: justify;
+      white-space: normal; 
+      color: #3F65FF;
+    }
+
+    .row-items {
+      .col-items {
+        border-bottom: 1px solid #f4f4f4;
+
+        .item-info {
+          h6 {
+            color: #c0c0c0;
+            text-align: left;
+            font-size: 10pt;
+            margin-left: 15px;
+          }
+
+          h4 {
+            color: #6f6f6f;
+            font-size: 12pt;
+            text-align: left;
+            margin-left: 15px;
+          }
+
+          .item-icon {
+            color: #c0c0c0;
+            font-size: 16pt;
+            position: absolute;
+            right: 15px;
+          }
+        }
+      }
+    }
+  }
+}

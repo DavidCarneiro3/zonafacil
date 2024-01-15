@@ -1,0 +1,18 @@
+<ion-header no-border>
+    <ion-navbar color="header">
+
+        <ion-title style="width: 26em;">
+            <ion-label>Visualização</ion-label>
+        </ion-title>
+
+        <ion-buttons left>
+            <button ion-button (click)="closeStreatViewPage()">
+                <span color="light" class="header-text" showWhen="ios">Fechar</span>
+                <ion-icon name="md-arrow-back" class="header-icon" showWhen="android,windows,core"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class="content">
+    <div id="streat-view"></div>
+</ion-content>

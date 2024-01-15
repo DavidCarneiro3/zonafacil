@@ -1,0 +1,46 @@
+<ion-header no-border>
+    <ion-navbar color="header" no-margin no-padding>
+        <ion-buttons right style="margin-right: 15px;">
+            <button ion-button icon-only (click)="closeModal()">
+                <span color="light" class="header-icon">X</span>
+                <!-- <ion-icon name="md-arrow-back" class="header-icon" showWhen="android,windows"></ion-icon> -->
+            </button>
+        </ion-buttons>
+
+        <ion-title center>
+            <ion-label style="color: white;">Bem vindo ao Zona Fácil</ion-label>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="content">
+
+    <ion-grid class="grid-historico-estacionamento">
+
+        <ion-row class="row">
+            <ion-col width-100 no-lines style="margin-top:9px; ">
+                <p style="color: #6c6c6c; font-size:10pt; text-align:center;">Para realizar as transações de compra de 
+                    CADs e estacionamento no Zona Fácil é necessário completar seu cadastro. Insira seu CPF no 
+                    campo abaixo.</p>
+                <ion-input type="tel" placeholder="CPF ou CNPJ" [(ngModel)]="input" [brmasker]="{person: true}"> </ion-input>
+            </ion-col>
+        </ion-row>
+
+        <!-- <ion-item class="btn-row" no-lines>
+            <button ion-button style="height:40px" class="btn" block (click)="save()">Enviar</button>
+        </ion-item> -->
+    </ion-grid>
+
+</ion-content>
+<ion-footer class="rodape">
+    <ion-toolbar mode="md">
+        <ion-title>
+            <ion-row class="btn-row">
+                <ion-col>
+                    <button ion-button style="height:40px" class="btn" block (click)="save()">Enviar</button>
+                </ion-col>
+            </ion-row>
+        </ion-title>
+    </ion-toolbar>
+</ion-footer>

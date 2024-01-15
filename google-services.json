@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "722683236957",
+    "firebase_url": "https://zonaazulfortaleza-prod.firebaseio.com",
+    "project_id": "zonaazulfortaleza-prod",
+    "storage_bucket": "zonaazulfortaleza-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722683236957:android:0ead7b8d162ae052",
+        "android_client_info": {
+          "package_name": "br.gov.ce.fortaleza.zonaazul"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722683236957-ntolt9i73ahgs11vut1ij5if6dahhpjm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUTZetABHq84mkWy3PeuEcFqu31XAQPjs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

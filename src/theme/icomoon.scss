@@ -1,0 +1,43 @@
+$icomoon-font-path: "../assets/fonts" !default;
+$icomoon-font-family: 'icomoon';
+
+// icomoon
+@font-face {
+  font-family: $icomoon-font-family;
+  src:  url('#{$icomoon-font-path}/icomoon.eot?hh9450');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?hh9450#iefix') format('embedded-opentype'),
+  url('#{$icomoon-font-path}/icomoon.ttf?hh9450') format('truetype'),
+  url('#{$icomoon-font-path}/icomoon.woff?hh9450') format('woff'),
+  url('#{$icomoon-font-path}/icomoon.svg?hh9450#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icomoon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: $icomoon-font-family !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin makeIcon($arg, $val) {
+    .ion-ios-#{$arg}:before ,
+    .ion-ios-#{$arg}-circle:before ,
+    .ion-ios-#{$arg}-circle-outline:before ,
+    .ion-ios-#{$arg}-outline:before ,
+    .ion-md-#{$arg}:before ,
+    .ion-md-#{$arg}-circle:before ,
+    .ion-md-#{$arg}-circle-outline:before ,
+    .ion-md-#{$arg}-outline:before  {
+        font-family: $icomoon-font-family !important;
+        content: $val;
+    }
+}

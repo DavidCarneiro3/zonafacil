@@ -1,0 +1,30 @@
+---------------------------
+-- MACBOOK (acesso local)
+login: tce
+senha: Tce***
+
+---------------------------
+-- EMAIL (webmail)
+email: devapp@tce.ce.gov.br
+senha: Tce***@devapp
+
+---------------------------
+-- APPLEID
+-- https://developer.apple.com/enroll/
+login: devapp@tce.ce.gov.br
+senha: Tce***@devapp
+
+---------------------------
+-- Google Play
+-- https://play.google.com/apps/publish/signup/
+login: devapp@tce.ce.gov.br
+senha: Tce***@devapp
+
+-- Versão do Node
+   v12.18.2
+
+- Versão do Ionic
+   v5.4.16
+
+- Versão do Cordova
+   v7.1.0

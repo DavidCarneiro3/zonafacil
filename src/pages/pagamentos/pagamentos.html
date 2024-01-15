@@ -1,0 +1,32 @@
+<ion-header no-border>
+    <ion-navbar color="header">
+        <button ion-button icon-only menuToggle>
+            <ion-icon class="header-icon" name="menu"></ion-icon>
+        </button>
+
+        <ion-title class="header-title">Pagamento</ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only (click)="openHelp()">
+                <ion-icon name="help-circle" class="header-icon"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="content">
+    <button ion-button (click)="openPage($event)" class="btn" block> + Adicionar Cartão de Crédito </button>
+    <loading-spinner *ngIf="showSpinner"></loading-spinner>
+    <ion-list *ngIf="!showSpinner" class="list">
+        <ion-item detail-none *ngFor="let current of list" (click)="openPage($event, current, current.key)" no-lines
+            class="route-item">
+            <ion-thumbnail item-start class="thumbnail-icon">
+                <img src="{{loadImageCartao(current?.values?.numero)}}" />
+            </ion-thumbnail>
+            <h2 class="information-date">{{getCartaoNumeroFormat(current?.values?.numero)}}</h2>
+            <p class="information-hour">{{current?.values?.data | date: 'MM/yyyy'}} </p>
+            <button ion-button class="btn-cancel" outline item-end (click)="excluir($event,current?.key)">Excluir</button>
+        </ion-item>
+    </ion-list>
+</ion-content>

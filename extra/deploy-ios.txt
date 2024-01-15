@@ -1,0 +1,44 @@
+Passo 1: (Criar conta e gerar as chaves no site da apple)
+Ver Referencias [1]
+
+Passo 2: (config.xml -> somente ao baixar o projeto do git)
+$ ionic plugin add cordova-custom-config --fetch
+
+Passo 3: (Versao Release)
+ionic cordova build ios --prod
+
+Passo 4: (Abrir o projeto XCode)
+platforms/ios/
+
+Passo 5: (XCode)
+Selecione: Generic iOS Device
+
+Passo 6: (XCode)
+Product >> Archive
+
+Passo 7: (itunesconnect)
+Abra itunesconnect.apple.com
+Preencha o formulário completo (dados, fotos, etc)
+
+Passo 8: (XCode)
+Window >> Organizer >> Update to App Store
+
+
+OBS.:
+Pacote:
+br.com.zonafacil.for
+
+Ao rodar no iOS desisntalar o plugin:
+ionic cordova plugin rm cordova-plugin-dreamover-uid
+
+
+marcosnv@icloud.com
+fcbw-etez-hsms-ybmw
+
+
+Referencias:
+[1] https://github.com/Microsoft/cordova-docs/blob/master/articles/tutorial-package-publish/tutorial-package-publish-readme.md
+[2] https://github.com/dpa99c/cordova-custom-config-example/blob/master/config.xml
+[3] http://appscreenshotstemplate.com/
+[4] https://itunesconnect.apple.com
+[5] http://stackoverflow.com/questions/39519773/nsphotolibraryusagedescription-key-must-be-present-in-info-plist-to-use-camera-r

@@ -1,0 +1,71 @@
+<ion-header no-border>
+  <ion-navbar transparent class="navbar only-mobile">
+
+    <ion-title>
+      <ion-label>Cadastro</ion-label>
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+<ion-content class="signup">
+
+  <div class="logo">
+    <ion-grid class="img img-centralize img-logo">
+      <img src="assets/imgs/logo.png" />
+    </ion-grid>
+  </div>
+
+  <ion-grid class="grid-form">
+    <ion-row justify-content-center>
+      <div class="form-margin">
+        <form class="form" [formGroup]="signupForm" novalidate>
+          <div text-center>
+            <ion-input type="text" #name formControlName="name" id="name" placeholder="Nome"
+              (keyup.enter)="focusInput(email)"></ion-input>
+            <ion-label class="error-message" *ngIf="signupForm.controls.name.invalid  && (submitAttempt)">Insira um nome
+              válido</ion-label>
+          </div>
+          <div text-center>
+            <ion-input type="tel" #phone formControlName="phone" id="telephone" placeholder="Telefone"
+              (keyup.enter)="focusInput(phone)" [brmasker]="{phone: true}"></ion-input>
+            <ion-label class="error-message" *ngIf="signupForm.controls.phone.invalid  && (submitAttempt)">Insira um
+              telefone válido</ion-label>
+          </div>
+          <div text-center>
+            <ion-input type="email" #email formControlName="email" id="email" placeholder="Email"
+              (keyup.enter)="focusInput(password)"></ion-input>
+            <ion-label class="error-message" *ngIf="signupForm.controls.email.invalid  && (submitAttempt)">Insira um
+              email válido</ion-label>
+          </div>
+          <div text-center>
+            <ion-input #password type="password" formControlName="password" id="password"
+              placeholder="Senha: mínimo 6 digitos" (keyup.enter)="register()"></ion-input>
+            <ion-label class="error-message" *ngIf="signupForm.controls.password.invalid  && (submitAttempt)">Insira uma
+              senha válida</ion-label>
+          </div>
+          <ion-row>
+            <ion-col col-12 class="checkbox">
+              <ion-checkbox #terms formControlName="terms" [(ngModel)]="checked" class="check"></ion-checkbox>
+              <ion-label class="text">Eu concordo com os <span class="info-link" (click)="showTerms()">Termos e
+                  Condições</span></ion-label>
+            </ion-col>
+          </ion-row>
+        </form>
+
+        <button ion-button (click)="register()" class="btn" block>Criar Minha Conta</button>
+
+      </div>
+    </ion-row>
+  </ion-grid>
+
+  <div class="logo">
+    <ion-grid class="img img-centralize img-logo logo-amc">
+      <ion-row align-items-center justify-content-center>
+        <ion-col align-items-center class="img-logo1-menu">
+          <img src="assets/imgs/logo-backwhite-cipetran.png" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

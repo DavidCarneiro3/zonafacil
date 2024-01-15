@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>797433292460-ca4jtcnqc8jmmov5dvkh9rvt82a82d71.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.797433292460-ca4jtcnqc8jmmov5dvkh9rvt82a82d71</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBSxw-6P1_zrMJq81hvEPdEWnsbL8DHaYc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>797433292460</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.com.parkfor</string>
+	<key>PROJECT_ID</key>
+	<string>parkfor-prod</string>
+	<key>STORAGE_BUCKET</key>
+	<string>parkfor-prod.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:797433292460:ios:a8938d0c2e38f843966109</string>
+	<key>DATABASE_URL</key>
+	<string>https://parkfor-prod.firebaseio.com</string>
+</dict>
+</plist>

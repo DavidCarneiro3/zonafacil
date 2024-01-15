@@ -1,0 +1,17 @@
+<ion-item class="user-menu-item" no-lines>
+  <ion-buttons end>
+    <button ion-button clear class="edt-button" (click)="goProfile()" icon-only color="white">
+      <ion-icon ios="ios-create-outline"></ion-icon>
+    </button>
+  </ion-buttons>
+  <img src="{{user?.photo}}" class="img" />
+  <p class="name">{{name}}</p>
+  <p class="profile" text-lowercase>{{user?.email}}</p>
+  <p *ngIf="user?.profile !== 'user'">{{user?.profile.toUpperCase()}}</p>
+  <p *ngIf="cads == null || cadsUsados == null || (cads - cadsUsados) == 0" class="cads-credits">Saldo: 0 CAD | R$ 0,00
+  </p>
+  <p *ngIf="(cads - cadsUsados) > 0 && (cads - cadsUsados) % 2 == 0" class="cads-credits">Saldo: {{cads - cadsUsados}}
+    CADs | R$ {{(cads - cadsUsados) * cad.valor_unitario}},00</p>
+  <p *ngIf="(cads - cadsUsados) > 0 && (cads - cadsUsados) % 2 == 1" class="cads-credits">Saldo: {{cads - cadsUsados}}
+    CAD | R$ {{(cads - cadsUsados) * cad.valor_unitario}},00</p>
+</ion-item>

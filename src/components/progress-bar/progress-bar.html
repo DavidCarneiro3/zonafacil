@@ -1,0 +1,8 @@
+<!-- Generated template for the ProgressBarComponent component -->
+<div class="clock">
+  <svg>
+    <circle cx="60" cy="60" r="60" [style.width]="value + '%'"></circle>
+    <circle cx="60" cy="60" r="60" [style.width]="percent + '%'" [style.background-color]="color"></circle>
+  </svg>
+  <label class="time">{{progress * 1000 | date: 'HH:mm:ss' : '+0000'}}</label>
+</div>

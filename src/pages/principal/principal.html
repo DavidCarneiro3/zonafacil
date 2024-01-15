@@ -1,0 +1,63 @@
+<ion-header no-border>
+  <ion-navbar color="header" no-border>
+      
+      <button ion-button icon-only menuToggle>
+          <ion-icon class="header-icon" name="menu"></ion-icon>
+      </button>
+      <ion-title class="title-header">
+       
+        <ion-select [(ngModel)]="city" class="select-city" cancelText="Cancelar" okText="Ok" [selectOptions]="selectOptions">
+          <ion-option value="Fortaleza">Fortaleza</ion-option>
+        </ion-select>
+      </ion-title>
+
+      <ion-buttons end>
+          <button class="pin-icon" ion-button icon-only (click)="goHome()">
+              <img src="assets/icones/pin-white.svg" alt="">
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <loading-spinner *ngIf="showSpinner"></loading-spinner> 
+  <div class="img-top"  *ngIf="!showSpinner">
+    <img src="assets/imgs/default.png" alt="" class="nav-img">
+    <h2 class="title">{{(cads-cadsUsados)}} CADS</h2>
+    <p class="price">R${{(cads-cadsUsados)*2}},00</p>
+    <button ion-button class="btn-comprar" (click)="goComprar()"><img src="assets/icones/shopping-cart-white.svg"></button>
+  </div>
+  <div class="content">
+    <div></div>
+    <div class="{{'class'+i}}" *ngFor="let item of list; let i = index">
+      
+      <ion-item no-lines mode="md" class="list-item">
+        <loading-spinner *ngIf="showSpinner"></loading-spinner> 
+          <ion-label text-left class="title-select" mode="md">{{item?.veiculo.placa || placa}}
+            <button ion-button small icon-end *ngIf="!checaEstacionado(item?.veiculo.placa)" class="btn-estacionar" (click)="showCloseSetor(item)">Estacionar <img src="assets/icones/estacionamento-white.svg" alt="">
+            </button>
+            <button ion-button small style="background-color: #27AE60;" icon-end *ngIf="checaEstacionado(item?.veiculo.placa)" class="btn-estacionar" (click)="goTempoRest()">
+              <div class="timer"> 
+                <timer [decorrido]="estacionar?.dataHoraRegistro" 
+                [now]="tempoCurrent"
+                [placa]="estacionar?.veiculo_id" 
+                [status]="estacionar?.status"></timer> 
+              </div>
+              <img style="margin-top: 3px; left: -2px; width: 14px; height: 14px;" src="assets/icones/arrow-fwd-white.svg" alt="">
+            </button>
+            <p>{{item.veiculo.marca || item.veiculo.nodelo | uppercase}}</p>
+          </ion-label>
+          
+      </ion-item>
+      <!--
+          <ion-select [(ngModel)]="placa" mode="md" cancelText="Cancelar" okText="Ok" (ionChange)="selecionarVeiculo($event)" [disabled]="fromRenovar">
+          <ion-option *ngFor="let item of veiculos" value="{{item.veiculo.placa}}" (click)="selecionarVeiculo($event)">{{item?.veiculo?.placa}}</ion-option>
+      </ion-select> 
+      -->
+    </div>
+    <button ion-button clear class="btn-add" (click)="goVeiculos()">Adicionar Veiculos <ion-icon name="add"></ion-icon></button>
+  </div>
+
+
+</ion-content>

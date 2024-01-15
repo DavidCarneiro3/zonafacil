@@ -1,0 +1,36 @@
+https://play.google.com/apps/publish
+
+keytool -genkey -v -keystore zonaazulfortaleza.keystore -alias zonaazulfortaleza -keyalg RSA -keysize 2048 -validity 10000
+
+alias: 
+zonaazulfortaleza
+
+senha: 
+zonaazulfortaleza@123
+
+-----------------------------------------------------------------------------------------------
+-- PASSO A PASSO
+-------------------
+
+Passo 3: (Versao Release)
+ionic cordova build android --minifyjs --minifycss --release
+
+Passo 4: (Assinar)
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore extra/zonaazulfortaleza.keystore -storepass zonaazulfortaleza@123 -keypass zonaazulfortaleza@123 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk zonaazulfortaleza
+
+Passo 5: (Verificar)
+jarsigner -verify -verbose -certs platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
+
+Passo 6:
+zipalign -f -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk platforms/android/app/build/outputs/apk/release/app-release-signed-aligned.apk
+
+
+OBS.:
+Ao rodar no Android desinstalar o plugin:
+$ ionic cordova plugin add cordova-plugin-uid@~1.3.0
+
+Referencias:
+http://blog.caelum.com.br/publicando-sua-app-no-google-play/
+http://www.lucianotamanaha.com/design/mobile/passos-para-criar-um-keystore-e-publicar-um-apk-no-google-play-cordova-cli/
+http://wildwildcats.blogspot.com.br/2014/12/deploy-cordova-apps-to-google-play-store.html
+http://stackoverflow.com/questions/30106468/specify-signing-config-for-gradle-and-cordova-5

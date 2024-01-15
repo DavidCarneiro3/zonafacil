@@ -1,0 +1,72 @@
+<ion-header no-border>
+    <ion-navbar color="header">
+        <button ion-button icon-only menuToggle>
+            <ion-icon class="header-icon" name="menu"></ion-icon>
+        </button>
+
+        <ion-title>
+            <ion-label class="header-title">Configurações e Alertas</ion-label>
+        </ion-title>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <loading-spinner *ngIf="showSpinner"></loading-spinner>
+        <div *ngIf="user && user?.configuracao != null">
+            <ion-list no-border>
+
+                
+                <ion-item class="item-list">
+                    <ion-label class="{{user.configuracao.ativacao_expiracao ? 'blue':'title-not'}}">{{title1}}</ion-label>
+                    <ion-toggle mode="md" checked="{{ user.configuracao.ativacao_expiracao ? 'true': 'false'}}"
+                        (ionChange)="updateConfig('ativacao_expiracao',$event)"></ion-toggle>
+                </ion-item>
+              
+                <ion-item class="item-list">
+                    <ion-label class="{{user.configuracao.alerta_5_minutos ? 'blue':'title-not'}}">{{title2}}</ion-label>
+                    <ion-toggle mode="md" checked="{{ user.configuracao.alerta_5_minutos ? 'true': 'false'}}"
+                        (ionChange)="updateConfig('alerta_5_minutos',$event)"></ion-toggle>
+
+                </ion-item>
+             
+                <ion-item class="item-list">
+                    <ion-label class="{{user.configuracao.alerta_10_minutos ? 'blue':'title-not'}}">{{title3}}</ion-label>
+                    <ion-toggle mode="md" checked="{{ user.configuracao.alerta_10_minutos ? 'true': 'false'}}"
+                        (ionChange)="updateConfig('alerta_10_minutos',$event)"></ion-toggle>
+
+                </ion-item>
+            
+                <ion-item class="item-list">
+                    <ion-label class="{{user.configuracao.alerta_15_minutos ? 'blue':'title-not'}}">{{title4}}</ion-label>
+                    <ion-toggle mode="md" checked="{{ user.configuracao.alerta_15_minutos ? 'true': 'false'}}"
+                        (ionChange)="updateConfig('alerta_15_minutos',$event)"></ion-toggle>
+
+                </ion-item>
+               
+                <ion-item class="item-list">
+                    <ion-label class="{{user.configuracao.alerta_20_minutos ? 'blue':'title-not'}}">{{title5}}</ion-label>
+                    <ion-toggle mode="md" checked="{{ user.configuracao.alerta_20_minutos ? 'true': 'false'}}"
+                        (ionChange)="updateConfig('alerta_20_minutos',$event)"></ion-toggle>
+
+                </ion-item>
+            
+                <ion-item class="item-list">
+                    <ion-label class="{{user.configuracao.alerta_25_minutos ? 'blue':'title-not'}}">{{title6}}</ion-label>
+                    <ion-toggle mode="md" checked="{{ user.configuracao.alerta_25_minutos ? 'true': 'false'}}"
+                        (ionChange)="updateConfig('alerta_25_minutos',$event)"></ion-toggle>
+
+                </ion-item>
+                
+                <ion-item class="item-list">
+                    <ion-label class="{{user.configuracao.alerta_30_minutos ? 'blue':'title-not'}}">{{title7}}</ion-label>
+                    <ion-toggle mode="md"  checked="{{ user.configuracao.alerta_30_minutos ? 'true': 'false'}}"
+                        (ionChange)="updateConfig('alerta_30_minutos',$event)"> </ion-toggle>
+
+                </ion-item>
+
+            </ion-list>
+        </div>
+    </ion-grid>
+</ion-content>

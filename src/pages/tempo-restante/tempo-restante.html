@@ -1,0 +1,145 @@
+<ion-header no-border>
+    <ion-navbar color="header">
+
+        <ion-title style="width: 26em;">
+            <ion-label class="header-title">Saldo: {{qtdCadsUser - qtdCadsUsados}} CADs</ion-label>
+        </ion-title>
+
+        <button ion-button icon-only menuToggle *ngIf="!(fromPage === 'comprovante')">
+            <ion-icon class="header-icon" name="menu"></ion-icon>
+        </button>
+
+        <ion-buttons left *ngIf="fromPage == 'comprovante' ">
+            <button ion-button (click)="closeTempoRestantePage()">
+                <span color="light" class="header-text" showWhen="ios">Fechar</span>
+                <ion-icon name="md-arrow-back" class="header-icon" showWhen="android,windows,core"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons end>
+            <button ion-button icon-only (click)="goComprar()">
+                <img src="assets/icones/shopping-cart-white.svg" alt="" class="header-img">
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="content">
+    
+
+    <div *ngIf="!showSpinner1">
+        <div class='time-master' *ngIf="estacionar">
+            <div class="{{estacionar?.veiculo?.tipo_veiculo == 'caminhao'? 'info-content-green':'info-content-pink'}}">
+                <loading-spinner *ngIf="showSpinner"></loading-spinner>
+                <ion-item class="item-select" no-lines mode="md" *ngIf="!showSpinner">
+                    <ion-label text-left class="title-select" mode="md">{{estacionar?.veiculo?.placa}}<p>{{estacionar?.veiculo?.marca || estacionar?.veiculo.modelo | uppercase}}</p></ion-label>
+                    <ion-label text-center mode="md"><img class="thumb" src="assets/icones/{{estacionar?.veiculo.tipo_veiculo == 'caminhao'? 'caminhao-white.svg': 'carro-white.svg'}}" alt=""></ion-label>
+                </ion-item>
+              
+            </div>
+            
+            <div>
+                <div class="time">
+                    <timer [decorrido]="estacionar?.dataHoraRegistro" 
+                           [now]="tempoCurrent"
+                           [placa]="estacionar?.veiculo_id" 
+                           [status]="estacionar?.status"></timer>
+                    <p><ion-label class="clock-text">Até {{somaHora(estacionar?.comprovante?.horario,estacionar?.tempoComprado)}} </ion-label></p>
+                </div>        
+                        
+                <round-progress
+                    [current]="percent(estacionar?.dataHoraRegistro)"
+                    [max]="estacionar?.tempoComprado"
+                    [color]="'#3F65FF'"
+                    [background]="'#E0E0E0'"
+                    [radius]="65"
+                    [stroke]="10"
+                    [semicircle]="false"
+                    [rounded]="true"
+                    [clockwise]="true"
+                    [responsive]="false"
+                    [duration]="800"
+                    [animation]="'easeInOutQuart'"
+                    [animationDelay]="0">
+                        <timer [time]="estacionar?.tempoEstacionado" 
+                               [now]="tempoCurrent"
+                               [placa]="estacionar?.veiculo_id" 
+                               [status]="estacionar?.status"></timer>
+                </round-progress>   
+            </div>
+            <div class="item-info">
+                <p>Placa: {{estacionar?.veiculo?.placa}}</p>
+                <p>CADs Usados: {{estacionar?.qtd}}</p>
+                <p>Tempo de {{estacionar?.qtd}} CAD: {{estacionar?.tempoComprado/60}} Hora(s)</p>
+                <p>Valor: <span class="price-text"> R${{estacionar?.comprovante?.valor}},00</span></p>
+                <p>Data/Hora da ativação: {{estacionar?.comprovante?.data+' '+  estacionar?.comprovante?.horario}}</p>
+                <p>Registro AMC: {{estacionar?.comprovante?.numberAuth}}</p>
+            </div>
+            <button ion-button small  mode="ios" type="button" (click)="renovarEstacionar(estacionar)"
+                    class="btn-renovar" icon-end>ESTENDER <ion-icon name="md-time"></ion-icon></button>
+            <button ion-button small clear mode="ios" type="button" (click)="closeTempoRestantePage()"
+                    class="btn-plus" icon-end>ESTACIONAR EM OUTRO LOCAL <ion-icon name="ios-add-outline"></ion-icon></button>       
+                     
+        </div>
+        
+         <!--<ion-row *ngFor="let _estacionados[0] of _estacionados;">
+            
+           <ion-col col-3 class="col-img">
+                <ion-item class="item-img" no-lines no-padding>
+                    <ion-thumbnail item-start class="thumbnail-icon">
+                        <img src="{{getImage(comprovante?.tipo_veiculo)}}" />
+                    </ion-thumbnail>
+                </ion-item>
+            </ion-col>-->
+           <!-- <ion-col col-4 class="col-details">
+                <p class="item-details-board">{{ comprovante?.placa }}</p>
+                <p *ngIf="veiculo" class="item-details-mark">{{veiculo?.marca}}
+                    {{veiculo?.modelo}}</p>
+                <p *ngIf="!veiculo" class="item-details-mark">Setor {{setor_id}}</p>
+                <p class="item-details-city">{{ cidade }}</p>
+                <ion-row>
+                    
+                    <ion-col col-5 class="item-info" >
+                        
+                           
+                        
+                    </ion-col>
+                </ion-row>
+                    <ion-col>
+                        
+                    </ion-col>
+            </ion-col>
+            <ion-col col-1 class="col-details renovar" *ngIf="renovar">
+                <ion-row></ion-row>
+                <button ion-button small mode="ios" type="button" (click)="renovarEstacionar(_estacionados[0].estacionar)"
+                    class="btn-renovar">Renovar</button>
+            </ion-col>
+            <ion-col col-12 class="col-message">
+                <ion-item class="item-messagem" no-lines no-padding>
+
+                    <ion-label *ngIf="qtd == 1" class="message">* Esta ativação possui
+                        {{qtd}} CAD ativo</ion-label>
+                    <ion-label *ngIf="qtd > 1" class="message">* Esta ativação possui
+                        {{qtd}} CADs ativos</ion-label>
+                </ion-item>
+            </ion-col>
+            <ion-col col-12 class="col-message">
+                <ion-item class="item-btn-rodape" no-lines no-padding>
+                    <button ion-button clear small color="blue2" icon-start (click)="openVeiculoEstacionado(_estacionados[0])">
+                        <ion-icon name='ios-pin-outline'></ion-icon>Ver Localização
+                    </button>
+                </ion-item>
+            </ion-col>
+        </ion-row>-->
+        <div *ngIf="!estacionar" class="row-info">
+            <ion-col col-12>
+                <ion-item no-lines>
+                    <h2>Não há nenhum veículo estacionado</h2>
+                </ion-item>
+                
+            </ion-col>
+        </div>
+    </div>
+
+</ion-content>

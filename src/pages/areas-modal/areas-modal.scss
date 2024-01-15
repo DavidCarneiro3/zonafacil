@@ -1,0 +1,24 @@
+areas-modal {
+  font-family: "Roboto";
+
+  .header-icon {
+    color: #fff;
+    font-size: 18pt;
+  }
+  .item-radio.item-md ion-label {
+    text-align: start;
+    color: rgb(122, 121, 121) !important;
+  }
+  .item-radio.item-ios ion-label {
+    color: rgb(122, 121, 121) !important;
+  }
+
+  ion-searchbar {
+    position: relative;
+    top: 0%;
+  }
+
+  ion-item {
+    @include item-color(red);
+  }
+}

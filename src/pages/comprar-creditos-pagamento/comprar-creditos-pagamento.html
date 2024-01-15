@@ -1,0 +1,55 @@
+<!--<ion-header no-border>
+    <ion-navbar color="header">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="closeComprarCreditosPagamento()">
+                <span color="light" class="header-text" showWhen="ios">Fechar</span>
+                <ion-icon name="md-arrow-back" class="header-icon" showWhen="android,windows"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>
+            <ion-label>Pagamentos</ion-label>
+        </ion-title>
+    </ion-navbar>
+</ion-header>-->
+
+<ion-content padding class="content">
+    <div class="info" *ngIf="hasCard === 1">
+        <h2 class="title">ATENÇÃO</h2>
+        <p class="desc">Você está comprando R${{price}},00 que equivale à {{cads}} CAD(s). Confirme para realizar sua compra.</p>
+        <loading-spinner *ngIf="showSpinner"></loading-spinner>
+        <ion-list *ngIf="!showSpinner" radio-group [(ngModel)]="card">
+            <ion-item class="route-item" *ngFor="let pagamento of list">
+                <ion-radio value="{{pagamento.key}}" item-start mode="md"></ion-radio>
+                <ion-label class="information-date">{{getCartaoNumeroFormat(pagamento?.values?.numero)}}</ion-label>
+                <ion-thumbnail item-start class="thumbnail-icon">
+                    <img src="{{loadImageCartao(pagamento?.values?.numero)}}" />
+                </ion-thumbnail>   
+            </ion-item>
+        </ion-list>
+        <button class="btn-confirma" (click)="getCard(card)" ion-button small>COMFIRMAR</button>
+        <button ion-button clear class="btn-add" (click)="closeComprarCreditosPagamento()">Cancelar</button>
+    </div>
+    <div class="info" *ngIf="hasCard === 2">
+        <loading-spinner *ngIf="showSpinner"></loading-spinner>
+        <div *ngIf="!showSpinner">
+            <p class="title">Olá</p>
+            <p class="information-date-2">Insira seu cartão para comprar seus créditos de estacionamento.</p>
+            <button class="btn-confirma" (click)="goPagamentos()" ion-button small>INSERIR</button>
+            <button ion-button clear class="btn-add" (click)="closeComprarCreditosPagamento()">Cancelar</button>
+        </div>
+        
+    </div>
+    <!--<button ion-button (click)="openPage($event)" class="btn" block>+ Adicionar Cartão</button>
+
+    <ion-list>
+        <ion-item detail-none *ngFor="let pagamento of list | async"
+            (click)="openSenhaSeguranca(pagamento?.key, pagamento?.values)" class="route-item">
+            <ion-thumbnail item-start class="thumbnail-icon">
+                <img src="{{loadImageCartao(pagamento?.values?.numero)}}" />
+            </ion-thumbnail>
+            <h2 class="information-date">{{getCartaoNumeroFormat(pagamento?.values?.numero)}}</h2>
+            <p class="information-hour">{{pagamento?.values?.data | date: 'MM/yyyy'}} </p>
+            <button ion-button color="grey" outline item-end (click)="excluir($event,pagamento?.key)">Excluir</button>
+        </ion-item>
+    </ion-list> -->
+</ion-content>

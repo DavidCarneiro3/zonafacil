@@ -1,0 +1,32 @@
+
+@mixin respond-to($media) {
+  @if $media == xs {
+      @media only screen and (min-width: 0px) and (max-width: 575px) { @content; }
+  }
+  @else if $media == sm {
+      @media only screen and (min-width: 37em) { @content; }
+  }
+  @else if $media == md {
+      @media only screen and (min-width: 768px) { @content; }
+  }
+  @else if $media == lg {
+      @media only screen and (min-width: 992px) { @content; }
+  }
+  @else if $media == xl {
+      @media only screen and (min-width: 1200px) { @content; }
+  }
+}
+
+.only-mobile {
+  @include respond-to(md) { display: none !important; }
+  @include respond-to(lg) { display: none !important; }
+  @include respond-to(xl) { display: none !important; }
+}
+
+.only-mobile-tablet {
+  @include respond-to(xl) { display: none !important; }
+}
+
+.only-desktop {
+  @include respond-to(xs) { display: none !important; }
+}

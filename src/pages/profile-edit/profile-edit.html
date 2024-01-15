@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar color="header">
+    <ion-title class="header-title">Perfil</ion-title>
+    <button ion-button icon-only menuToggle>
+      <ion-icon class="header-icon" name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="grid-profile">
+    <div class="informacoes-body">
+      <!--<ion-item no-lines>
+        <ion-thumbnail (click)="selectPicture()" class="centralize">
+          <div class="profile-img">
+            <div>
+              <img src="{{user?.photo}}" class="img">
+              <div class="icon-img">
+                <ion-icon name="icon-camera_perfil_3" class="camera-icon"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </ion-thumbnail>
+        <input type="file" #fileUserPhoto style="visibility: hidden; height: 0px" name="files[]"
+          (change)="processWebImageUserPhoto($event)" />
+      </ion-item> -->
+     
+      <form class="informacoes-body-list">
+        <ion-item class="informacoes-body-list-item" no-lines>
+          
+          <ion-label ><img src="assets/icones/account.svg" alt="" class="profile-icon"> </ion-label>
+          <ion-input type="text" #name id="name" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}" placeholder="Nome"
+           class="{{user.name?'blue-component':'grey-component'}}"></ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{user.name?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label><img src="assets/icones/mail.svg" alt="" class="profile-icon"></ion-label>
+          <ion-input type="email" #email [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" class="{{user.email?'blue-component':'grey-component'}}" placeholder="Email">
+          </ion-input><button class="menu-btn"  ion-button clear type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{user.email?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+          
+        </ion-item>
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label><img src="assets/icones/phone.svg" alt="" class="profile-icon"> </ion-label>
+          <ion-input type="tel" #phone [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}" placeholder="Fone"
+            [brmasker]="{phone: true}" class="{{user.phone?'blue-component':'grey-component'}}"></ion-input><button class="menu-btn"  ion-button clear type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{user.phone?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label><img src="assets/icones/cpf.svg" alt="" class="profile-icon"> </ion-label>
+          <ion-input type="tel" #cpf [(ngModel)]="user.cpf" [ngModelOptions]="{standalone: true}"  placeholder="CPF"
+            [brmasker]="{person: true}" class="{{user.cpf?'blue-component':'grey-component'}}"></ion-input><button class="menu-btn"  ion-button clear type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{user.cpf?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label style="max-width:10%;"><img src="assets/icones/calendar.svg" alt="" class="profile-icon"></ion-label>
+          <ion-datetime #dateOfBirth id="dateOfBirth" displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY"
+            [(ngModel)]="user.dateOfBirth" [ngModelOptions]="{standalone: true}" cancelText="Cancelar"
+            doneText="Definir" class="{{user.dateOfBirth?'blue-component':'grey-component'}}"></ion-datetime><button class="menu-btn"  ion-button clear type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{user.cpf?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label stacked><img src="assets/icones/gender.svg" alt="" class="profile-icon"> </ion-label>
+          <ion-select [(ngModel)]="user.sex" [ngModelOptions]="{standalone: true}" cancelText="Cancelar" class="{{user.sex?'blue-component':'grey-component'}}">
+            <ion-option value="Feminino">Feminino</ion-option>
+            <ion-option value="Masculino">Masculino</ion-option>
+          </ion-select><button class="menu-btn"  ion-button clear type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{user.sex?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+        <ion-item class="btn-row" no-lines>
+          <button ion-button (click)="updateData()" class="btn" block>Salvar</button>
+        
+          <button ion-button (click)="showConfirm()" class="btn btn-password" block>Trocar senha</button>
+        </ion-item>
+        <ion-item class="btn-row">
+          <button ion-button (click)="goLogout()" class="btn btn-sair" block >Sair da Conta</button>
+        </ion-item>
+      </form>
+    </div>
+
+  </div>
+
+</ion-content>

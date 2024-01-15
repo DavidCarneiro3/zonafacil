@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar color="header" text-center>
+
+        <ion-title center>
+            <ion-label>Setores</ion-label>
+        </ion-title>
+
+        <ion-buttons right>
+            <button ion-button (click)="filtrarBairros()">
+                <ion-icon name="funnel"></ion-icon>
+            </button>
+            <button ion-button (click)="limparFiltros()">
+                <ion-icon name="trash"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons left>
+            <button ion-button (click)="dismiss()">
+                <span color="light" class="header-text" showWhen="ios">Fechar</span>
+                <ion-icon name="md-close" class="header-icon" showWhen="android,windows,core"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar placeholder="Buscar Setores" color="secondary" (ionInput)="procurarZonas($event)"></ion-searchbar>
+    <ion-list radio-group class="list">
+        <ion-item *ngFor="let setor of setores" text-wrap>
+            <ion-label>{{setor.setor}} <br> {{setor.area.endereco}}</ion-label>
+            <ion-radio item-left slot="start" (ionSelect)="select(setor)" mode="md"></ion-radio>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="rodape">
+    <ion-toolbar mode="md">
+        <ion-title>
+            <ion-row class="btn-rows">
+                <ion-col>
+                    <button ion-button block (click)="dismiss()">Cancelar</button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button block color="default" (click)="showSetor()"
+                        [disabled]="this.setorSelecionado.length <= 0"> OK </button>
+                </ion-col>
+            </ion-row>
+        </ion-title>
+    </ion-toolbar>
+</ion-footer>

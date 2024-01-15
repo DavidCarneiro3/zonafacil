@@ -1,0 +1,129 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+@import "icomoon";
+@import "kanit";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #4A83D4,
+  secondary:  #66ca00,
+  blue:       #2467b6,
+  blue2:       #0692c7,
+  danger:     #e64f23,
+  light:      #f4f4f4,
+  dark:       #222,
+  grey:       #575757,
+  white:      #ffffff,
+  light-grey: #999,
+  dark-grey:  #343434,
+  dark-blue:  #003249,
+  header-dark:  #1c2b36,
+  header:  #4A83D4,
+  toogle:    #3F65FF,
+  header-light:  #0093d4,
+  header-title: #fff,
+  yellow:   #f9f381,
+  yellow-dark:#FFD400,
+  text-color: #000,
+  default: #2d324f,
+);
+
+$text-input-md-show-focus-highlight: false;
+  
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+.cartao-popover{
+  .popover-wrapper{
+    width: 100%;
+    .popover-content{
+      width: 90%;
+      .scroll-content{
+        overflow: hidden;
+      }
+      margin-left: 1px;
+    }
+  }
+  width: 100%;
+  height: auto;
+  
+}
+/*
+$popover-md-width: 85%; $popover-ios-width: 85%; $popover-wp-width: 85%;
+$popover-ios-max-height: 90%; $popover-md-max-height: 90%;
+$popover-md-scroll-content-overflow: hidden; $popover-ios-scroll-content-overflow: hidden; $popover-wp-overflow: hidden;
+$popover-md-left: -14%; $popover-ios-left: -14%;*/
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+@import "icomoon.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+// @import "nunito";

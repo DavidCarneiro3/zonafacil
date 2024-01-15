@@ -1,0 +1,46 @@
+<ion-header no-border>
+    <ion-navbar color="header">
+        <button ion-button icon-only menuToggle>
+            <ion-icon class="header-icon" name="menu"></ion-icon>
+        </button>
+
+        <ion-title class="header-title">Compartilhe</ion-title>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+    <ion-grid>
+        <ion-row class="row-header">
+            <ion-col col-12 class="info">
+                <p>COMPARTILHE NAS REDES SOCIAIS</p>
+            </ion-col>
+        </ion-row>
+        <ion-row class="row-items">
+            <ion-item no-lines>
+                <h6>Site</h6>
+                <h4 (click)="shareLink()">{{cad.info.site}}</h4>
+            </ion-item>
+        </ion-row>
+        <ion-row class="row-social">
+            <!-- <ion-col col-12 class="col-more">
+                <button class="item-facebook" ion-button icon-start block (click)="shareFacebook()">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                    <p>Compartilhar no facebook</p>
+                </button>
+            </ion-col>
+            <ion-col col-12 class="col-more">
+                <button class="item-whats" ion-button icon-start block (click)="shareWhatsapp()">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                    <p class="wp">Compartilhar no whatsapp</p>
+                </button>
+            </ion-col> -->
+            <ion-col col-12 class="col-more">
+                <button class="item-default" ion-button icon-start block (click)="share()">
+                    <ion-icon name="share"></ion-icon>
+                    <p>Compartilhar</p>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

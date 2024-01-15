@@ -1,0 +1,171 @@
+// http://ionicframework.com/docs/theming/
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@import "../theme/mixins";
+@import "../theme/responsive.scss";
+@import "../theme/menu.scss";
+@import "../theme/footer.scss";
+
+body{
+  font-family: 'kanit';
+}
+
+.header-title {
+  font-family: "kanit";
+  margin-left: -30px;
+
+  .toolbar-title {
+    font-size: 1.8rem;
+  }
+}
+
+.alert {
+  background-color: transparent;
+  color: color($colors, primary);
+
+  .btn-cancel {
+    color: #f8071d;
+  }
+
+  .btn-ok {
+    color: #0080fa;
+  }
+}
+
+.back-button {
+  color: #fff !important;
+}
+
+.title-ios {
+  padding-right: 30px !important;
+  padding-left: 30px !important;
+}
+
+.text-pdv{
+  font-size: 15px;
+  color: #3F65FF;
+}
+
+.modal-alert {
+  .modal-wrapper {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    display: block;
+    width: 80%;
+    height: 50%;
+  }
+}
+
+ion-app.platform-ios ion-content {
+  pointer-events: auto; /*fix scroll lock on ios12.2*/
+}
+
+.close-button{
+  
+}
+
+.user-menu-item {
+  top: 0;
+  background-color: #283E81;
+  color: #fff;
+  font-family: "kanit";
+  margin: 0 0 10px 0;
+  height: 205px;
+  border-radius: 0 0 2pc 2pc;
+  .button{
+    top: 20px;
+  }
+  .img {
+    @include respond-to(xs) {
+      width: 60px;
+      height: 60px;
+    }
+    @include respond-to(sm) {
+      width: 60px;
+      height: 60px;
+    }
+    @include respond-to(md) {
+      width: 60px;
+      height: 60px;
+    }
+    @include respond-to(lg) {
+      width: 60px;
+      height: 60px;
+    }
+    @include respond-to(xl) {
+      width: 60px;
+      height: 60px;
+    }
+
+    border-radius: 100%;
+    border: 2px solid white;
+  }
+
+  p {
+    color: #fff;
+    font-weight: normal;
+  }
+
+  .name {
+    font-size: 16px;
+    text-transform: capitalize;
+    white-space: pre-wrap;
+    margin-top: 15px;
+  }
+
+  .profile {
+    font-size: 8pt;
+    text-transform: capitalize;
+  }
+
+  .city {
+    font-size: 8pt;
+    text-transform: capitalize;
+  }
+
+  .cads-credits {
+    font-size: 8pt;
+    // text-transform: capitalize;
+    margin-top: 0px;
+  }
+
+  .popover-ios{
+  
+    .popover-wrapper{
+        .popover-content{
+            width: 500px;
+            .scroll-content{
+                overflow: hidden;
+            }
+        }
+    }
+
+
+}
+
+  
+}
+.modal-alert .modal-wrapper {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  display: block;
+  width: 80%;
+  height: 290px;
+  overflow: block;
+}
+$text-input-md-show-focus-highlight: false;

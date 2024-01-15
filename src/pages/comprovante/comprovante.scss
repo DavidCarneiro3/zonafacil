@@ -1,0 +1,103 @@
+page-comprovante {
+  .scroll-content{
+    font-family: "kanit";
+    background-color: #f7f7f7;
+  }
+
+  .header-icon {
+    color: #fff;
+  }
+
+  .content {
+    .header-icon {
+      color: #fff;
+      display: block !important;
+    }
+
+    .logo {
+      padding: 1.5em 3.5em 0em 3.5em;
+      margin-top: 0;
+
+      .img {
+        @include respond-to(xs) {
+          width: 130px;
+        }
+        @include respond-to(sm) {
+          width: 130px;
+        }
+        @include respond-to(md) {
+          width: 130px;
+        }
+        @include respond-to(lg) {
+          width: 200px;
+        }
+        @include respond-to(xl) {
+          width: 200px;
+        }
+      }
+
+      .img-logo {
+        img {
+          border-radius: 5px;
+        }
+      }
+
+      .img-centralize {
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+
+    .informacoes-body {
+      .informacoes-body-header {
+        background-color: #f1f1f1;
+        padding-top: 30px;
+
+        .title-header-body {
+          text-align: left;
+          color: #aeaeae;
+          margin-left: 10px;
+          font-weight: normal;
+        }
+      }
+
+      .informacoes-body-list {
+        width: 100%;
+
+        .informacoes-body-list-item {
+          // background-color: #4F4F4F;
+          margin-left: 10px;
+
+          h6 {
+            text-align: left;
+            color: #c4c4c4;
+            font-size: 13px;
+            font-weight: normal;
+          }
+
+          h2 {
+            text-align: left;
+            color: #808080;
+            font-size: 16px;
+            font-weight: normal;
+          }
+        }
+
+        .btn-control{
+          // background-color: #4F4F4F;
+        }
+
+        .btn {
+          border: none !important;
+          // background: #3F65FF;
+          border-radius: 26px;
+          height: 35px;
+          margin-top: 10px;
+          // color: #000;
+        }
+      }
+    }
+  }
+}

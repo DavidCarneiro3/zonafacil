@@ -1,0 +1,84 @@
+<ion-header no-border>
+    <ion-navbar color="header" no-margin no-padding>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="closeModal()">
+                <span color="light" class="header-icon" showWhen="ios">X</span>
+                <ion-icon name="md-arrow-back" class="header-icon" showWhen="android,windows"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-title class="header-title">Filtros</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="content">
+    <div class="informacoes-body">
+
+        <div class="informacoes-body-list">
+           
+            <ion-item class="informacoes-body-list-item" no-lines>
+                <ion-label  style="max-width:10%;"><ion-icon name="ios-calendar-outline"></ion-icon></ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/YYYY" [min]="data.min" [max]="data.today"
+                    cancelText="Cancelar" doneText="Selecionar" [(ngModel)]='filter.data' name='data' color="yellow-dark">
+                </ion-datetime><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{filter.data?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+            </ion-item>
+        
+            <ion-item class="informacoes-body-list-item" no-lines>
+                <ion-label class="btn-icon"><ion-icon name="ios-basket-outline"></ion-icon></ion-label>
+                <ion-input type="tel" placeholder="Quantidade de CADs" [(ngModel)]="filter.qtdCads" name="qtdCads" class="{{filter.qtdCads?'blue-component':'grey-component'}}"> 
+
+                </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{filter.qtdCads?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+            </ion-item>
+        
+            <ion-item class="informacoes-body-list-item" no-lines>
+                <ion-label class="btn-icon"><ion-icon name="ios-pricetags-outline"></ion-icon></ion-label>
+                <ion-input type="tel" placeholder="R$ 10,00" [(ngModel)]="filter.valor" name="valor" class="{{filter.valor?'blue-component':'grey-component'}}"> 
+
+                </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{filter.valor?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+            </ion-item>
+    
+            <ion-item class="btn-row" no-lines>
+                <button ion-button style="height:40px" class="btn" block (click)="Filtro()"> Filtrar </button>
+            </ion-item>
+        </div>
+    </div>
+
+    <!-- <ion-grid class="grid-historico-estacionamento">
+
+        <ion-row>
+            <ion-col width-30 style="margin-top:9px; ">
+                <ion-label class="label" color="primary">Data</ion-label>
+            </ion-col>
+            <ion-col>
+                <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/YYYY" [min]="data.min" [max]="data.today"
+                    cancelText="Cancelar" doneText="Selecionar" [(ngModel)]='filter.data' name='data'>
+                </ion-datetime>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col width-30 style="margin-top:9px; ">
+                <ion-label class="label" color="primary">Quantidade CADS</ion-label>
+            </ion-col>
+            <ion-col>
+                <ion-input type="text" placeholder="1" [(ngModel)]="filter.qtdCads" name="qtdCads"> </ion-input>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col width-30 style="margin-top:9px; ">
+                <ion-label class="label" color="primary">Valor gasto</ion-label>
+            </ion-col>
+            <ion-col>
+                <ion-input type="text" placeholder="10,00" [(ngModel)]='filter.valor' name="valor">
+                </ion-input>
+            </ion-col>
+        </ion-row>
+
+        <ion-item class="btn-row" no-lines>
+            <button ion-button style="height:40px" class="btn" block (click)="Filtro()"> Filtrar </button>
+        </ion-item>
+    </ion-grid> -->
+
+</ion-content>

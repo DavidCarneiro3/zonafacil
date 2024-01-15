@@ -1,0 +1,158 @@
+page-profile {
+  font-family: "Roboto";
+
+  .header-icon {
+    color: #fff;
+  }
+
+  .content {
+    background: #2d324f;
+    .grid-profile {
+      background-color: #fff;
+      margin-top: 20%;
+
+      .centralize {
+        margin: 0 auto;
+        margin-top: -60px;
+
+        .profile-img {
+          div {
+            position: relative;
+
+            .img {
+              @include respond-to(xs) {
+                width: 105px;
+                height: 105px;
+              }
+              @include respond-to(sm) {
+                width: 105px;
+                height: 105px;
+              }
+              @include respond-to(md) {
+                width: 105px;
+                height: 105px;
+              }
+              @include respond-to(lg) {
+                width: 105px;
+                height: 105px;
+              }
+              @include respond-to(xl) {
+                width: 105px;
+                height: 105px;
+              }
+
+              border-radius: 100%;
+              border: 2px solid white;
+            }
+
+            .icon-img {
+              background-color: #0791cf;
+              height: 30px;
+              width: 30px;
+              border-radius: 100%;
+              border: 2px solid white;
+              position: absolute;
+              top: 70%;
+              left: 70%;
+
+              .camera-icon {
+                font-size: 26pt;
+                color: #fff;
+                position: absolute;
+                top: -4px;
+                left: -3px;
+              }
+            }
+          }
+        }
+      }
+
+      .informacoes-header {
+        background-color: #fff;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #c6c6c6;
+
+        div {
+          .text-name {
+            color: #5f5f5f;
+            font-size: 14pt;
+            text-align: center;
+            font-weight: normal;
+            white-space: pre-wrap;
+          }
+
+          .text-email {
+            color: #8c8c8c;
+            font-size: 10pt;
+          }
+        }
+      }
+
+      .informacoes-header-itens {
+        border-top: 2px solid #cccccc;
+
+        .informacoes-header-item {
+          .text-qtd {
+            font-size: 20pt;
+            font-weight: normal;
+            color: #2b2a32;
+            cursor: pointer;
+          }
+
+          .text-item {
+            font-size: 12pt;
+            font-weight: normal;
+            color: #8c8c8c;
+          }
+        }
+      }
+
+      .text {
+        margin-top: -25px;
+      }
+
+      .informacoes-body {
+        .btn-password {
+          padding-left: 17px;
+          padding-right: 17px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        .informacoes-body-header {
+          background-color: #f1f1f1;
+          padding-top: 30px;
+
+          .title-header-body {
+            text-align: left;
+            color: #8c8c8c;
+            margin-left: 10px;
+            font-weight: 500;
+          }
+        }
+
+        .informacoes-body-list {
+          width: 100%;
+          .informacoes-body-list-item {
+            margin-left: 10px;
+
+            ion-label {
+              text-align: left;
+              color: #7d7d7d;
+              font-size: 11px;
+              font-weight: normal;
+            }
+
+            ion-input,
+            ion-select,
+            ion-datetime {
+              padding-left: 9px;
+              color: #747474;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

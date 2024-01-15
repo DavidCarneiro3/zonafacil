@@ -1,0 +1,364 @@
+page-historico {
+
+  .header-icon {
+    color: #fff;
+  }
+
+  .toolbar-background {
+    background-color: #2d324f;
+    border: 0;
+  }
+
+  ion-segment-button {
+    width: 30%;
+  }
+
+  .segments {
+    .segment-activated {
+      background-color: #fff !important;
+      ion-label {
+        color: #2d2d4f !important;
+        font-weight: bold !important;
+      }
+    }
+
+    .segment-button {
+      max-width: 119px !important;
+      background-color: #fff;
+      border-color: #1d2235;
+
+      ion-label {
+        font-size: 10pt;
+        color: #2c304d;
+        font-weight: normal;
+      }
+    }
+  }
+  .item-info{
+    position: relative;
+    top: 0px;
+    left: 7px;
+    width: 100%;
+    float: right;
+    font-size: 11px;
+    color: #4F4F4F;
+    
+    p{
+      margin: 1px;
+    }
+    .price-text{
+      margin-left: 6px;
+    }
+  }
+  .btn-cancel {
+    color: red;
+    height: 1.9em;
+    font-size: 1.3rem;
+    margin-left: 0%;
+  }
+
+  .btn-options{
+    float: right;
+    margin-top: -10px;
+    color: #4F4F4F;
+  }
+
+  .btn-devolucao {
+    color: cadetblue;
+    height: 1.9em;
+    font-size: 1.3rem;
+    margin-left: 0%;
+  }
+
+  .btn{
+    border: none !important;
+    // background: #3F65FF;
+    border-radius: 26px;
+    height: 35px;
+    margin-top: 10px;
+    // color: #000;
+  }
+
+  
+
+  .content {
+    .sum {
+      border: none;
+      // background-color: #4f4f4f;
+      p{
+        color: #444;
+      }
+      border-radius: 10px;
+    }
+    background-color: #f2f2f2;
+
+    .placa-item {
+      background-color: transparent !important;
+      .btn-cred{
+        border: none !important;
+        // background: #3F53A7;
+        // color: black;
+        border-radius: 26px;
+        height: 35px;
+        margin-top: 10px;
+      }
+    }
+
+    .placa {
+      text-align: left;
+      font-weight: 500;
+    }
+
+    ion-input {
+      .text-input {
+        color: #333;
+        text-align: right;
+      }
+    }
+
+    .data-item {
+      background-color: transparent !important;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .grid-historico-estacionamento {
+      .row {
+        background-color: #fff;
+        border-bottom: 1px solid #f4f4f4;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        padding: 5px;
+        ion-col {
+          padding: 0;
+        }
+
+        ion-label {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .col-info {
+          .placa {
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 12pt;
+            font-weight: normal;
+            color: #6c6c6c;
+            margin-top: 20px;
+            margin-left: 10px;
+            font-weight: 400;
+          }
+
+          .data {
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 9pt;
+            color: #7d7d7d;
+            word-break: break-word;
+            margin-top: 5px;
+            margin-left: 10px;
+            font-weight: 300;
+          }
+
+          .cidade {
+            color: #6d6d6d;
+            text-align: left;
+            font-size: 9.5pt;
+            margin-top: 5px;
+            margin-left: 10px;
+            font-weight: 400;
+          }
+        }
+
+        .col-status {
+          .status-renovacao {
+            background-color: #4cda64 !important;
+          }
+
+          .status-aquisicao {
+            background-color: #0690ce !important;
+          }
+
+          .status {
+            background-color: #fff;
+            height: 20px;
+            border-radius: 10px;
+            color: #fff;
+            float: right;
+            margin-top: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-right: 5px;
+          }
+        }
+
+        .line {
+          border-bottom: 1px solid #f4f4f4;
+        }
+
+        .col-rodape-btn {
+          padding: 0 !important;
+          padding-right: 5px !important;
+        }
+
+       
+
+        .col-rodape {
+          padding: 10px 0 10px 15px;
+
+          .cads {
+            text-align: left;
+            margin-left: 5px;
+            font-weight: normal;
+            color: #707070;
+            font-size: 11pt;
+          }
+
+          .price {
+            text-align: right;
+            font-weight: normal;
+            color: transparent;
+            font-size: 11pt;
+            font-weight: 300;
+          }
+
+          .recibo {
+            background: #adadad;
+          }
+        }
+      }
+    }
+
+    .grid-historico-creditos {
+      .row {
+        background-color: #fff;
+        border-bottom: 1px solid #f4f4f4;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        padding: 5px;
+        ion-col {
+          padding: 0;
+        }
+
+        ion-label {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .col-info {
+          .placa {
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 12pt;
+            font-weight: normal;
+            color: #6c6c6c;
+            margin-top: 20px;
+            margin-left: 10px;
+            font-weight: 400;
+          }
+
+          .data {
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 9pt;
+            color: #7d7d7d;
+            word-break: break-word;
+            margin-top: 5px;
+            margin-left: 10px;
+            font-weight: 300;
+          }
+
+          .cidade {
+            color: #6d6d6d;
+            text-align: left;
+            font-size: 9.5pt;
+            margin-top: 5px;
+            margin-left: 10px;
+            font-weight: 400;
+          }
+        }
+
+        .col-status {
+          .status-renovacao {
+            background-color: #27AE60 !important;
+          }
+
+          .status-aquisicao {
+            background-color: #3F65FF !important;
+          }
+
+          .status {
+            background-color: #fff;
+            height: 20px;
+            border-radius: 10px;
+            color: #fff;
+            float: right;
+            margin-top: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-right: 5px;
+          }
+        }
+
+        .line {
+          border-bottom: 1px solid #f4f4f4;
+        }
+
+        .col-rodape-btn {
+          padding: 0 !important;
+          padding-right: 5px !important;
+        }
+
+       
+
+        .col-rodape {
+          padding: 10px 0 10px 15px;
+
+          .cads {
+            text-align: left;
+            margin-left: 5px;
+            font-weight: normal;
+            color: #707070;
+            font-size: 11pt;
+          }
+
+          .price {
+            text-align: right;
+            font-weight: normal;
+            color: transparent;
+            font-size: 11pt;
+            font-weight: 300;
+          }
+
+          .recibo {
+            background: #adadad;
+          }
+        }
+      }
+      
+    }
+    
+
+    .row-message {
+      background-color: #fff;
+      border-bottom: 1px solid #f4f4f4;
+
+      .col-message {
+        .item-message {
+          .message {
+            color: #717171;
+            text-align: center;
+            font-size: 11pt;
+            white-space: pre-line;
+          }
+        }
+      }
+    }
+  
+}
+}

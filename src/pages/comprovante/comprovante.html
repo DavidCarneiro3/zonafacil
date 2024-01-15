@@ -1,0 +1,70 @@
+<ion-header no-border>
+
+  <ion-navbar color="header">
+    <ion-title class="header-title">Comprovante</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="compartilhar()">
+        <ion-icon name="share" class="header-icon"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="content">
+
+  <div class="logo">
+    <ion-grid class="img img-centralize img-logo">
+      <img src="assets/imgs/logo.png" />
+    </ion-grid>
+  </div>
+
+  <ion-grid>
+    <loading-spinner *ngIf="showSpinner1"></loading-spinner>
+    <ion-row class="informacoes-body">
+      <ion-item class="informacoes-body-header">
+        <ion-label class="title-header-body">COMPROVANTE DE ESTACIONAMENTO</ion-label>
+      </ion-item>
+      <ion-list class="informacoes-body-list">
+        <ion-item class="informacoes-body-list-item">
+          <h6>Placa</h6>
+          <h2>{{placa}}</h2>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item">
+          <h6>CADs</h6>
+          <h2>{{cad}}</h2>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item">
+          <h6>Autenticação</h6>
+          <h2>{{estacionar?.comprovante.numberAuth}}</h2>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item">
+          <h6>Tempo de {{estacionar?.qtd}} CAD(s)</h6>
+          <h2>{{estacionar?.tempoComprado}} Minutos</h2>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item">
+          <h6>Valor</h6>
+          <h2>R$ {{cad * valor_unitario}},00</h2>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item">
+          <h6>Data/Hora da Solicitação</h6>
+          <h2>{{date | date: "dd/MM/yyyy 'às' HH:mm"}}</h2>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item">
+          <h6>Cidade</h6>
+          <h2>{{estacionar?.cidade}}</h2>
+        </ion-item>
+
+        <ion-item class="btn-control">
+          <button ion-button block class="btn" (click)="baixarPDF()">Baixar PDF</button>
+        </ion-item>
+
+        <ion-item *ngIf="showCloseButton" class="btn-control">
+          <button ion-button block class="btn" (click)="closePageComprovante()">Fechar</button>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

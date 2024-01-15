@@ -1,0 +1,43 @@
+<ion-header no-border>
+  <ion-navbar color="header">
+    <button ion-button icon-only menuToggle>
+      <ion-icon class="header-icon" name="menu"></ion-icon>
+    </button>
+
+    <ion-title class="header-title">Meus Veículos</ion-title>
+
+    <ion-buttons end>
+      <button icon-only ion-button (click)="openHelp()">
+        <ion-icon name="help-circle" class="header-icon"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="content">
+  <button ion-button (click)="openPage($event)" class="btn" block>+ Adicionar veículo</button>
+  <loading-spinner *ngIf="showSpinner"></loading-spinner> 
+ 
+    <div class="{{'class'+i}}" *ngFor="let current of list; let i = index">
+        <ion-item no-lines mode="md" class="list-item"  (click)="openPage($event,current)">
+          <ion-label text-left class="title-select" mode="md">{{current?.veiculo?.placa || placa}}
+            <button ion-button small icon-end class="btn-estacionar" (click)="excluir($event,current?.key)">Excluir
+            </button>
+            <p>{{current?.veiculo?.marca || current?.veiculo?.nodelo | uppercase}}</p>
+          </ion-label>
+          
+      </ion-item>
+    </div>
+    <!--<button ion-item detail-none *ngFor="let current of list | async" (click)="openPage($event,current)"
+      class="route-item">
+      <ion-thumbnail item-start class="thumbnail-icon">
+        <img src="{{getImage(current?.veiculo?.tipo_veiculo)}}" />
+      </ion-thumbnail>
+      <h2 class="information-date">{{current?.veiculo?.placa}}</h2>
+      <p class="information-hour">{{current?.veiculo?.marca}}</p>
+      <button ion-button class="grey" outline item-end (click)="excluir($event,current?.key)">Excluir</button>
+    </button> -->
+  
+  
+</ion-content>

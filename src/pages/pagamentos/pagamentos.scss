@@ -1,0 +1,133 @@
+page-pagamentos {
+  .scroll-content{
+    font-family: "kanit";
+    background: #f2f2f2;
+  }
+  
+
+  .header-icon {
+    color: #fff;
+  }
+
+  .list{
+    margin-top: 15px;
+  }
+
+  .btn {
+    border: 2px solid #828282 !important;
+    background: transparent;
+    color: #828282;
+    border-radius: 26px;
+    height: 35px;
+    margin-top: 0px;
+  }
+
+  .route-item {
+    box-shadow: 1px 2px 2px 2px rgb(210, 210, 210);
+    padding-left: 0;
+    background: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 5px;
+    
+    .information-date{
+      font-size: 12px;
+      margin-left: -5px !important;
+    }
+    .information-hour{
+      margin-left: -2px !important;
+    }
+    .thumbnail-icon {
+      min-width: 35px;
+      min-height: 40px;
+      margin-left: 3px;
+      
+      img {
+        border-radius: 5px;
+        width: auto;
+        height: 30px;
+        margin-top: 5px;
+      }
+    }
+
+    .information-date {
+      color: #444;
+      font-weight: normal;
+      font-size: 10.5pt;
+      text-align: left;
+      margin-left: 5%;
+    }
+
+    .information-hour {
+      color: #8c8c8c;
+      font-weight: normal;
+      font-size: 9pt;
+      float: left;
+      margin-left: 5%;
+      margin-top: 3px;
+    }
+
+    .btn-cancel {
+      border-color: #aaa;
+      border-radius: 26px ;
+      color: #aaa;
+      margin-right: 1px;
+    }
+  }
+
+  .success {
+    .alert-wrapper {
+      background-color: #00cc99;
+      color: #fff;
+    }
+
+    .alert-message {
+      color: #fff;
+    }
+
+    .alert-button-group {
+      .btn-ok {
+        color: #fff;
+      }
+    }
+  }
+
+  .error {
+    .alert-wrapper {
+      background-color: #cc0033;
+      color: #fff;
+    }
+
+    .alert-message {
+      color: #fff;
+    }
+
+    .alert-button-group {
+      .btn-ok {
+        color: #fff;
+      }
+    }
+  }
+
+  .info {
+    .alert-wrapper {
+      background-color: #4d90fe;
+      color: #fff;
+    }
+
+    .alert-message {
+      color: #fff;
+    }
+
+    .alert-button-group {
+      .btn-ok {
+        color: #fff;
+      }
+
+      .btn-cancel {
+        border-radius: 26px;
+        color: #fff;
+      }
+    }
+  }
+}

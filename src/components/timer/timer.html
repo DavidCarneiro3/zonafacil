@@ -1,0 +1,17 @@
+<ion-label *ngIf="time > 0" class="time">
+    <!--<p>
+        Restante
+    </p>-->
+    {{time * 1000 | date: 'HH:mm:ss' : '+0000'}}
+</ion-label>
+
+<ion-label *ngIf="time === 0 || time < 0" class="time">
+    00:00:00
+</ion-label>
+
+<ion-label class="time" *ngIf="decorrido > 0">
+   <!-- <p>
+        Decorrido
+    </p>-->
+    {{decorrido * 1000 | date: 'HH:mm:ss' : '+0000'}}
+</ion-label>

@@ -1,0 +1,46 @@
+accordion {
+  .row-items {
+    .col-items {
+      .item-info {
+        h6 {
+          color: #c0c0c0;
+          text-align: left;
+          margin-left: 15px;
+          font-size: 10pt;
+        }
+
+        h4 {
+          color: #6f6f6f;
+          font-size: 12pt;
+          text-align: left;
+          margin-left: 15px;
+        }
+
+        .item-icon {
+          color: #c0c0c0;
+          font-size: 16pt;
+          position: absolute;
+          right: 0;
+          top: 18px;
+          margin-right: 10px;
+        }
+      }
+
+      .checkboxs {
+        max-height: 0;
+        display: none;
+
+        .item-checkboxs {
+          margin-left: 15px;
+
+          ion-label {
+            color: #000;
+            text-align: left;
+            font-size: 12pt;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}

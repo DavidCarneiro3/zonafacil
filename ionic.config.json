@@ -1,0 +1,13 @@
+{
+  "name": "smartiriweb",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/transacao",
+      "proxyUrl": "https://wszonaazuldsv.centralamc.com.br"
+    }
+  ]
+}

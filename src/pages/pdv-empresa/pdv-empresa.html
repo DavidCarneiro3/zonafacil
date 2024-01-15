@@ -1,0 +1,96 @@
+<ion-header no-border>
+  <ion-navbar color="header">
+
+    <button ion-button icon-only menuToggle>
+      <ion-icon class="header-icon" name="menu"></ion-icon>
+    </button>
+
+    <ion-title class="header-title">Quero ser PDV</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid class="grid-profile">
+
+    <ion-row class="informacoes-body">
+    
+
+      <form class="informacoes-body-list" [formGroup]="empresaForm">
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label stacked> <ion-icon name="ios-briefcase-outline"></ion-icon></ion-label>
+          <ion-select [(ngModel)]="modelPdv" [selectOptions]="selectOptions" formControlName="Modalidade" name="modalidade" class="{{empresaForm.controls.Modalidade.valid?'blue-component':'grey-component'}}" cancelText="Cancelar" okText="Ok">
+            <ion-option value="PDV" selected="true"> PDV </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label><ion-icon name="ios-paper-outline"></ion-icon></ion-label>
+          <ion-input type="text" mode="ios" formControlName="Rsocial" placeholder="Razão Social" class="{{empresaForm.controls.Rsocial.valid?'blue-component':'grey-component'}}">
+
+          </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{empresaForm.controls.Rsocial.valid?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label ><ion-icon name="ios-card-outline"></ion-icon></ion-label>
+          <ion-input type="tel" mode="ios" formControlName="CNPJ" placeholder="CNPJ" [brmasker]="{mask: '00.000.000/0000-00', len:18, type:'all'}" class="{{empresaForm.controls.CNPJ.valid?'blue-component':'grey-component'}}">
+
+          </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{empresaForm.controls.CNPJ.valid?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label ><ion-icon name="ios-list-box-outline"></ion-icon> </ion-label>
+          <ion-input type="text" mode="ios" formControlName="InsMun" placeholder="Inscrição Municipal" class="{{empresaForm.controls.InsMun.valid?'blue-component':'grey-component'}}">
+
+          </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{empresaForm.controls.InsMun.valid?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label ><ion-icon name="ios-map-outline"></ion-icon></ion-label>
+          <ion-input type="text" mode="ios" formControlName="Endereco" placeholder="Endereço" class="{{empresaForm.controls.Endereco.valid?'blue-component':'grey-component'}}">
+
+          </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{empresaForm.controls.Endereco.valid?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label><ion-icon name="ios-send-outline"></ion-icon></ion-label>
+          <ion-input type="tel" mode="ios" formControlName="Cep" placeholder="CEP" class="{{empresaForm.controls.Cep.valid?'blue-component':'grey-component'}}">
+
+          </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{empresaForm.controls.Modalidade.Cep?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label ><ion-icon name="ios-call-outline"></ion-icon></ion-label>
+          <ion-input type="tel" mode="ios" formControlName="phone" placeholder="Telefone" [brmasker]="{phone: true}" class="{{empresaForm.controls.phone.valid?'blue-component':'grey-component'}}">
+
+          </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{empresaForm.controls.phone.valid?'icon-blue icon icon-ios ion-ios-checkmark-circle-outline':'icon-grey icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <ion-label ><ion-icon name="ios-mail-outline"></ion-icon></ion-label>
+          <ion-input type="email" mode="ios" formControlName="email" placeholder="Email" class="{{empresaForm.controls.email.valid?'grey-component':'blue-component'}}">
+
+          </ion-input><button class="menu-btn" ion-button clear  type="button" item-right> <ion-icon ios="ios-checkmark-circle-outline" class="{{empresaForm.controls.email.valid?'icon-grey icon icon-ios ion-ios-checkmark-circle-outline':'icon-blue icon icon-ios ion-ios-checkmark-circle-outline'}}"></ion-icon> </button>
+        </ion-item>
+
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <header *ngIf="!hasPhoto()">Enviar Documentos da Empresa</header>
+          <header *ngIf="hasPhoto()">Documento Anexado <span>&#10003;</span></header>
+          <input type="file" #fileUserPhoto style="visibility: hidden; height: 0px "
+            (change)="processWebImageUserPhoto($event)" />
+          <button ion-button (click)="selectPicture()" class="btn" style="height:35px;" block> Foto/Arquivo </button>
+        </ion-item>
+
+        <ion-item class="informacoes-body-list-item" no-lines>
+          <button ion-button (click)="continue()" class="btn-add" style="height:35px;" block> Enviar Solicitação </button>
+          <input type="file" #fileUserPhoto style="visibility: hidden; height: 0px "
+            (change)="processWebImageUserPhoto($event)" />
+        </ion-item>
+
+
+      </form>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

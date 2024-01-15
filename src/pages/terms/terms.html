@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-navbar color="header">
+    <button ion-button icon-only menuToggle *ngIf="isToggle">
+      <ion-icon class="header-icon" name="menu"></ion-icon>
+    </button>
+
+    <ion-title class="header-title">Termos de Serviços</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+
+  <ion-item padding class="bg0 item-text" no-lines *ngFor="let item of termos | async">
+    <h2 class="titulo">{{item.titulo}}</h2>
+    <p class="text" *ngFor="let item2 of item.desc">{{item2}}</p>
+  </ion-item>
+
+</ion-content>
+
+<ion-footer *ngIf="isToggle === false">
+  <ion-toolbar>
+    <ion-item class="btn-row" no-lines>
+      <button ion-button (click)="continuar()" class="btn" block>Aceitar e Continuar</button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

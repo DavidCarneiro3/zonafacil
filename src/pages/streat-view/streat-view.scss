@@ -1,0 +1,22 @@
+page-streat-view {
+  font-family: "Roboto";
+
+  .header-icon {
+    color: #fff;
+    font-size: 18pt;
+  }
+
+  .header-text {
+    color: #fff;
+    font-size: 12pt;
+  }
+
+  .content {
+    background: #fff;
+
+    #streat-view {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

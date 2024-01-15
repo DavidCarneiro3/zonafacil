@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "zonaazulfortaleza-prod",
+    "zonaazulfortaleza-prod": "zonaazulfortaleza-prod"
+  }
+}

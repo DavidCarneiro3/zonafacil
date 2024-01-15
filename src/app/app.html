@@ -1,0 +1,143 @@
+<ion-split-pane mode="ios">
+  <ion-menu [content]="content">
+    <ion-content class="menu">
+      <ion-list class="list" mode="ios">
+        
+        <ion-item class="user-menu-item" no-lines>
+          <ion-buttons start>
+            <button ion-button clear class="close-button" (click)="closeMenu()" icon-only color="white">
+              <span class="close-menu">X</span>
+            </button>
+          </ion-buttons>
+          <ion-buttons end>
+            <button ion-button clear class="edt-button" (click)="goProfile(user)" icon-only color="white">
+              <img class="ico" src="assets/icones/right-icon.svg"/>
+            </button>
+          </ion-buttons>
+          <img src="{{user?.photo}}" class="img" />
+          <p class="name">{{name}}</p>
+          <p class="profile" text-lowercase>{{user?.email}}</p>
+          <p *ngIf="user?.profile !== 'user'">{{user?.profile.toUpperCase()}}</p>
+          <!-- <p *ngIf="cads == null || cadsUsados == null || (cads - cadsUsados) == 0" class="cads-credits">Saldo: 0 CAD(s) | R$ 0,00</p> -->
+          <p class="cads-credits">Saldo: {{cads - cadsUsados}} CAD(s) | R$ {{(cads - cadsUsados) * cad.valor_unitario}},00</p>
+          </ion-item>
+        <!-- <user-info></user-info> -->
+        
+          <button ion-button clear (click)="goHome()" mode="ios" class="menu-item" no-lines>
+            <img class="ico" src="assets/icones/pin-1.svg"/>
+              <ion-label class="text-menu">Início</ion-label>
+            
+          </button>
+
+          <button ion-button clear clear (click)="goVeiculos()" mode="ios" class="menu-item" no-lines>
+            <img class="ico" src="assets/icones/car.svg" />
+            <!--<ion-icon name="ios-car-outline" color="header" item-left></ion-icon>-->
+              <ion-label class="text-menu"> Meus Veículos</ion-label>
+            
+          </button>
+
+          <button ion-button clear clear (click)="goPagamentos()" mode="ios" class="menu-item" no-lines>
+            <img class="ico" src="assets/icones/wallet.svg"/>
+              <ion-label class="text-menu">Pagamento</ion-label>
+            
+          </button>
+
+          <button ion-button clear clear (click)="goHistorico()" mode="ios" class="menu-item" no-lines>
+            <img class="ico" src="assets/icones/history.svg"/>
+              <ion-label class="text-menu">Histórico</ion-label>
+            
+          </button>
+
+          <button ion-button clear clear (click)="goCreditos()" mode="ios" class="menu-item" no-lines>
+            <img class="ico" src="assets/icones/shopping-cart-1.svg"/>
+              <ion-label class="text-menu">Compra de Cads</ion-label>
+           
+          </button>
+
+          <button ion-button clear clear (click)="goConfiguracoes()" mode="ios" class="menu-item" no-lines>
+            <img class="ico" src="assets/icones/alarm.svg"/>
+              <ion-label class="text-menu">Alertas e Lembretes</ion-label>
+           
+          </button>
+        
+        
+         <!--  <button ion-button clear clear (click)="goEstacionamentosAtivos()" class="menu-item" no-lines>
+            <img class="ico" src="assets/icones/estacionamento.svg"/>
+              <ion-label class="text-menu">Estacionamentos Ativos</ion-label>
+            
+          </button>
+          
+          <button ion-button clear clear (click)="goProfile()" class="menu-item" no-lines>
+            <ion-icon name="icon-perfil" item-left>  </ion-icon>
+              <ion-label class="text-menu">Perfil</ion-label>
+          
+          </button>
+         
+
+        
+
+        
+
+        
+          <button ion-button clear clear (click)="goCompartilhar()" class="menu-item" no-lines>
+            <img class="ico" src="assets/icones/share.svg"/>
+              <ion-label class="text-menu">Compartilhe</ion-label>
+            
+          </button>
+        -->
+
+        
+      </ion-list>
+      <ion-list>
+        
+          <button ion-button clear (click)="goPdvCadastro()" *ngIf="pdvReg" mode="ios" class="menu-item">
+            <img class="ico" src="assets/icones/bookmark.svg"/>
+              <ion-label class="text-pdv"> Quero ser PDV </ion-label>
+            
+          </button>
+        
+      </ion-list>
+        <div class="footer">
+          <div class="footer-list">
+         
+            <button ion-button clear (click)="goAjuda()" class="footer-item" mode="ios"  no-lines>
+              <img class="ico" src="assets/icones/help (2).svg" />
+                <ion-label class="text-footer">Ajuda</ion-label>
+              
+            </button>
+          
+              <button ion-button clear (click)="goAvaliar()" class="footer-item" mode="ios"  no-lines>
+                  <img class="ico" src="assets/icones/favorite.svg" />
+                  <ion-label class="text-footer">Avalie o Zona Fácil</ion-label>
+              </button>
+           
+              <button ion-button clear (click)="goProblema()" class="footer-item"  mode="ios"  no-lines>
+                <img class="ico" src="assets/icones/feedback.svg" />
+                  <ion-label class="text-footer">Reportar problema</ion-label>
+                
+              </button>
+
+              <button ion-button clear (click)="goLogout()" class="footer-item" mode="ios"  no-lines>
+                <img class="ico" src="assets/icones/logout.svg" />
+                  <ion-label class="text-footer">Sair</ion-label>
+              </button>
+            </div>
+          
+          
+        
+          <div class="img-logo">
+            <img src="assets/imgs/logo-new.png" />
+            
+          </div>
+        
+    </div> 
+    <div class="versao"><label>{{versao}}</label></div> 
+    <div class="footer-bottom"></div>
+    </ion-content>
+    
+  </ion-menu>
+
+  <ion-nav [root]="rootPage" main #content swipeBackEnabled="false"></ion-nav>
+  
+
+</ion-split-pane>

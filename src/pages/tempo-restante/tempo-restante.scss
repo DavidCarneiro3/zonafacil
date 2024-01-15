@@ -1,0 +1,287 @@
+page-tempo-restante {
+  font-family: 'kanit';
+
+  .header-icon {
+    color: #fff;
+    font-size: 18pt;
+  }
+
+  .header-text {
+    color: #fff;
+    font-size: 12pt;
+  }
+
+  .header-title{
+    font-size: 18px;
+    margin-left: -110px;
+  }
+
+  .thumb{
+    margin-top: 15px;
+    width: 100px;
+  }
+
+  .content {
+    background: #f7f7f7;
+
+    .info-content-pink{
+      border-left: 6px solid #BB6BD9;
+      color: #243060;
+      border-radius: 5px;
+      width: 95%;
+      height: 95px;
+      margin-left: 2.5%;
+      margin-top: 3%;
+      background-color: #fff;
+      box-shadow: 1px 3px 3px rgb(145, 145, 145);
+      .item-select{
+        // background-color: #4f4f4f;
+        border-radius: 5px !important;
+        height: 80px;
+        margin-top: 5px;
+      }
+      button{
+        top: -5px;
+        color: #243060;
+        font-size: 12px;
+        position: relative;
+      }
+      ion-select{
+        width: 50%;
+      }
+      .title-select{
+        color: #243060;
+        font-size: 23px;
+        margin-top: 35px;
+      }
+      p{
+        margin-top: 10px;
+        color: #ccc;
+        font-size: 16px;
+      }
+    }
+  
+    
+    .info-content-green{
+      border-left: 6px solid #00cc99;
+      color: #243060;
+      border-radius: 5px;
+      width: 95%;
+      height: 95px;
+      margin-left: 2.5%;
+      margin-top: 3%;
+      background-color: #fff;
+      .item-select{
+        // background-color: #4f4f4f;
+        border-radius: 5px !important;
+        height: 80px;
+        margin-top: 5px;
+      }
+      button{
+        top: -3px;
+        color: #fff;
+        font-size: 12px;
+      }
+      ion-select{
+        width: 50%;
+      }
+      .title-select{
+        color: #243060;
+        font-size: 22px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      p{
+        margin-top: 0px;
+        color: #ccc;
+      }
+    }
+
+    .time-master{
+      height: 250px;
+    }
+  
+   .item-info{
+          position: relative;
+          top: -135px;
+          left: 7px;
+          width: 50%;
+          float: right;
+          font-size: 11px;
+          color: #4f4f4f;
+          p{
+            margin: 1px;
+          }
+          .price-text{
+            margin-left: 6px;
+          }
+        }
+    .time{
+      top: 50px;
+      left: 13px;
+      font-size: 1pc;
+      position: relative;
+      color: #243060;
+      .clock-text{
+        top: 45px;
+        left: 20px;
+        color: #828282;
+        position: relative;
+      }
+    }
+    
+    .btn-renovar {
+      background-color: #3F65FF;
+      border-radius: 26px;
+      height: 2.5em;
+      width: 20.5em;
+      font-size: 1.3rem;
+      margin-left: 10%;
+      top: -90px;
+      // color: #000
+    }
+    .btn-plus {
+      border: 2px solid #828282;
+      color: #828282;
+      box-sizing: border-box;
+      border-radius: 26px;
+      height: 2.5em;
+      width: 20.5em;
+      font-size: 1.3rem;
+      margin-left: 10%;
+      top: -70px;
+    }
+    
+    ion-row {
+      background: #f7f7f7;
+      margin-bottom: 20px;
+      
+      
+
+      ion-col {
+        padding: 0;
+      }
+
+      .col-img {
+        .item-img {
+          width: 60px;
+          height: 60px;
+          margin-top: 10px;
+          margin-left: 10px;
+          border-radius: 100%;
+
+          .thumbnail-icon {
+            min-width: 40px;
+            min-height: 40px;
+            margin-right: 0;
+            margin-left: 9px;
+
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+      .col-details {
+        text-align: left;
+        margin-top: 10px;
+        
+        
+
+        .item-details-board {
+          font-size: 12pt;
+          font-weight: normal;
+          color: #383838;
+        }
+        .item-details-mark {
+          font-size: 9pt;
+          font-weight: normal;
+          color: #bebebe;
+          word-break: break-word;
+        }
+        
+
+        .item-details-city {
+          font-size: 9.5pt;
+          font-weight: normal;
+          color: #6a6a6a;
+        }
+
+        .item-time {
+          text-align: center;
+          margin-top: 5px;
+          margin-bottom: 10px;
+          border: 1.5px #0692c7 solid;
+          width: 100%;
+          border-radius: 20px;
+
+          .item-inner {
+            padding: 0;
+          }
+
+          ion-label {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+          }
+        }
+        ion-row {
+          ion-col {
+            margin-right: 0.5em;
+          }
+        }
+      }
+      .renovar {
+        display: block;
+        align-content: flex-end;
+        margin-left: 20px;
+      }
+      .col-time {
+        text-align: center;
+        left: 45px;
+        background-color: #fff;
+      }
+
+      
+
+      .col-message {
+        border-top: 1px #f4f4f4 solid;
+        padding: 0;
+
+        .item-messagem {
+          .message {
+            text-align: left;
+            margin-left: 10px;
+            font-weight: normal;
+            color: #717171;
+          }
+        }
+        .btn-cancel {
+          color: red;
+          height: 1.9em;
+          font-size: 1.3rem;
+          margin-left: 0%;
+        }
+
+        .item-btn-rodape {
+          .label {
+            margin: 0;
+            padding: 0;
+          }
+
+          button {
+            text-transform: initial;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .row-info {
+      h2 {
+        color: #717171;
+      }
+    }
+  }
+}

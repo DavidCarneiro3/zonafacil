@@ -1,0 +1,160 @@
+<ion-header no-border>
+
+    <ion-navbar color="header">
+        <button ion-button icon-only menuToggle *ngIf="withMenu">
+          <ion-icon class="header-icon" name="menu"></ion-icon>
+        </button>
+
+        <ion-title class="header-title">{{titulo}}</ion-title>
+
+        <!-- <ion-buttons end>
+            <button ion-button icon-only (click)="openHelp()">
+                <ion-icon name="help-circle" class="header-icon"></ion-icon>
+            </button>
+        </ion-buttons> -->
+
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid class="grid-profile">
+
+        <ion-row class="informacoes-body">
+           
+            <form class="informacoes-body-list">
+                <ion-label class="title">Escolha o tipo de veículo</ion-label>
+                <ion-row class="radio-row">
+                        <ion-col class="carro">
+                        
+                            <div *ngIf="!hasId(item?.id)" tappable (tap)="defineTipo('automovel')">
+                                <img src="{{item.tipo_veiculo == 'automovel'?'assets/icones/carro01.svg':'assets/icones/carro.svg'}}" alt="" class="vimg">
+                                <p class="{{item.tipo_veiculo == 'automovel'?'blue':'grey'}}"><ion-icon name="{{item.tipo_veiculo == 'automovel'?'radio-button-on':'radio-button-off'}}"></ion-icon> Carro</p>
+                            </div>
+                            <div *ngIf="hasId(item?.id)">
+                                <img src="{{item.tipo_veiculo == 'automovel'?'assets/icones/carro01.svg':'assets/icones/carro.svg'}}" alt="" class="vimg">
+                                <p class="{{item.tipo_veiculo == 'automovel'?'blue':'grey'}}"><ion-icon name="{{item.tipo_veiculo == 'automovel'?'radio-button-on':'radio-button-off'}}"></ion-icon> Carro</p>
+                            </div>
+                            
+                        </ion-col>
+                        <ion-col class="caminhao">
+                            <div *ngIf="!hasId(item?.id)" tappable (tap)="defineTipo('caminhao')">
+                                <img src="{{item.tipo_veiculo == 'caminhao'?'assets/icones/caminhao-blue.svg':'assets/icones/caminhao.svg'}}" alt="" class="vimg">
+                                <p class="{{item.tipo_veiculo == 'caminhao'?'blue':'grey'}}"><ion-icon name="{{item.tipo_veiculo == 'caminhao'?'radio-button-on':'radio-button-off'}}"></ion-icon> Caminhão</p>
+                            </div>
+                            <div *ngIf="hasId(item?.id)">
+                                <img src="{{item.tipo_veiculo == 'caminhao'?'assets/icones/caminhao-blue.svg':'assets/icones/caminhao.svg'}}" alt="" class="vimg">
+                                <p class="{{item.tipo_veiculo == 'caminhao'?'blue':'grey'}}"><ion-icon name="{{item.tipo_veiculo == 'caminhao'?'radio-button-on':'radio-button-off'}}"></ion-icon> Caminhão</p>
+                            </div>
+                            
+                        </ion-col>
+                    
+                </ion-row>
+                <ion-label class="title">Escolha o modelo da placa</ion-label>
+                <ion-row class="radio-row">
+                    
+                    <ion-col class="ppadrao">
+                    
+                        <div *ngIf="!hasId(item?.id)" tappable (tap)="checkRadiop('padrao')">
+                            <img src="assets/icones/padrao.svg" alt="" class="vimg">
+                            <p class="{{item.tipo_placa == 'padrao'?'blue':'grey'}}"><ion-icon name="{{item.tipo_placa == 'padrao'?'radio-button-on':'radio-button-off'}}"></ion-icon> Placa Padrão</p>
+                        </div>
+                        <div *ngIf="hasId(item?.id)">
+                            <img src="assets/icones/padrao.svg" alt="" class="vimg">
+                            <p class="{{item.tipo_placa == 'padrao'?'blue':'grey'}}"><ion-icon name="{{item.tipo_placa == 'padrao'?'radio-button-on':'radio-button-off'}}"></ion-icon> Placa Padrão</p>
+                        </div>
+                        
+                    </ion-col>
+                    <ion-col class="pmerco">
+                        <div *ngIf="!hasId(item?.id)" tappable (tap)="checkRadiop('mercosul')">
+                            <img src="assets/icones/mercosul.svg" alt="" class="vimg">
+                            <p class="{{item.tipo_placa == 'mercosul'?'blue':'grey'}}"><ion-icon name="{{item.tipo_placa == 'mercosul'?'radio-button-on':'radio-button-off'}}"></ion-icon> Placa Mercosul</p>
+                        </div>
+                        <div *ngIf="hasId(item?.id)">
+                            <img src="assets/icones/mercosul.svg" alt="" class="vimg">
+                            <p class="{{item.tipo_placa == 'mercosul'?'blue':'grey'}}"><ion-icon name="{{item.tipo_placa == 'mercosul'?'radio-button-on':'radio-button-off'}}"></ion-icon> Placa Mercosul</p>
+                        </div>
+                    </ion-col>
+                
+            </ion-row>
+            <ion-label class="title">Digite a placa do seu veículo</ion-label>
+            <ion-row>
+                
+                <div class="info-placa">
+                    <ion-input [disabled]="hasId(item?.id)" type="text" #placa  [(ngModel)]="item.placa" maxLength="8" (input)="placa.value=formatPlaca($event.target.value.toUpperCase())" placeholder="AAA-0000" [textMask]="{mask: mask, guide: false}" [ngModelOptions]="{standalone: true}" ></ion-input>
+                </div>
+                <br/>
+            </ion-row>
+            <ion-row></ion-row>
+            <ion-label class="title">Digite o modelo do seu veículo</ion-label>
+            <ion-row>
+                <div class="controls">
+                    <ion-input [disabled]="hasId(item?.id)" #modelo [(ngModel)]="item.marca" (ngModelChange)="item.marca = $event.toLocaleUpperCase()" type="text"  placeholder="Marca e modelo..." [ngModelOptions]="{standalone: true}"></ion-input>
+                </div>
+            </ion-row>
+            <!--
+                <ion-row  *ngIf = 'fromPage == "renovar"'  align-items-center text-align-center>
+                        <ion-col col-2></ion-col>
+                        <ion-col  *ngIf ='item.tipo_veiculo == "automovel"' col-12>
+                            <ion-label  class="tipo-veiculo-text" [ngClass]="{'tipo-veiculo-text-selected': item.tipo_veiculo==='automovel'}">Automóvel</ion-label>
+                            <button [disabled]="hasId(item?.id)" ion-button color="light" clear class="tipo-veiculo" (click)="defineTipo('automovel')">
+                    <img src="assets/imgs/car.png" [ngClass]="{'img-selected': item.tipo_veiculo==='automovel'}" />
+                    </button>
+                        </ion-col>
+                        <ion-col  *ngIf ='item.tipo_veiculo !== "automovel"' col-12>
+                            <ion-label  class="tipo-veiculo-text" [ngClass]="{'tipo-veiculo-text-selected': item.tipo_veiculo!=='automovel'}">Caminhão/Ônibus</ion-label>
+                            <button [disabled]="hasId(item?.id)" ion-button color="light" clear class="tipo-veiculo" (click)="defineTipo('caminhao_onibus')">
+                    <img src="assets/imgs/truck.png" [ngClass]="{'img-selected': item.tipo_veiculo!=='automovel'}" />
+                    </button>
+                        </ion-col>
+                        <ion-col col-2></ion-col>
+                    </ion-row>
+
+
+                <ion-row *ngIf = 'fromPage == "estacionar"'>
+                    <ion-col col-2></ion-col>
+                    <ion-col  col-4>
+                        <ion-label class="tipo-veiculo-text" [ngClass]="{'tipo-veiculo-text-selected': item.tipo_veiculo=='automovel'}">Automóvel</ion-label>
+                        <button [disabled]="hasId(item?.id)" ion-button color="light" clear class="tipo-veiculo" (click)="defineTipo('automovel')">
+                <img src="assets/imgs/car.png" [ngClass]="{'img-selected': item.tipo_veiculo==='automovel'}" />
+              </button>
+                    </ion-col>
+                    <ion-col  col-4>
+                        <ion-label class="tipo-veiculo-text" [ngClass]="{'tipo-veiculo-text-selected': item.tipo_veiculo!=='automovel'}">Caminhão/Ônibus</ion-label>
+                        <button [disabled]="hasId(item?.id)" ion-button color="light" clear class="tipo-veiculo" (click)="defineTipo('caminhao_onibus')">
+                <img src="assets/imgs/truck.png" [ngClass]="{'img-selected': item.tipo_veiculo!=='automovel'}" />
+              </button>
+                    </ion-col>
+                    <ion-col col-2></ion-col>
+                </ion-row>
+
+
+          <ion-item class="informacoes-body-list-item" no-lines>
+            <ion-label stacked>Placa</ion-label>
+            <ion-input [disabled]="hasId(item?.id)" type="text" #placa  [(ngModel)]="item.placa" maxLength="8" (input)="placa.value=formatPlaca($event.target.value.toUpperCase())" placeholder="AAA-0000" [textMask]="{mask: mask, guide: false}" [ngModelOptions]="{standalone: true}" ></ion-input>
+          </ion-item>
+          <div style="text-align: center">
+            <span *ngIf="isMercosul()" class="mercosul" item-center>Mercosul</span>           
+          </div>
+          
+          <ion-item class="informacoes-body-list-item" no-lines>
+            <ion-label stacked>Marca/Modelo (Opcional)</ion-label>
+            <ion-input [disabled]="hasId(item?.id)" type="text" #marca id="marca" [(ngModel)]="item.marca" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+           <ion-item class="informacoes-body-list-item" no-lines>
+            <ion-label stacked>Modelo (Opcional)</ion-label>
+            <ion-input type="text" #modelo id="modelo" [(ngModel)]="item.modelo" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item> -->
+
+                <div class="btn-margin">
+                    <ion-item class="btn-row" no-lines>
+                        <button ion-button (click)="submit()" class="btn" block *ngIf="!hasId(item?.id)">Salvar</button>
+                    </ion-item>
+                </div>
+            </form>
+        </ion-row>
+
+    </ion-grid>
+
+</ion-content>

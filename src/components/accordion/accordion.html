@@ -1,0 +1,21 @@
+<ion-row class="row-items">
+  <ion-col class="col-items">
+    <ion-item class="item-info" no-lines>
+      <ion-icon name="ios-arrow-down" class="item-icon" (click)="toggleAccordion()"></ion-icon>
+      <h6>{{title}}</h6>
+      <h4>{{optionSelected}}</h4>
+    </ion-item>
+    <div #checkboxs class="checkboxs">
+      <ion-item no-lines class="item-checkboxs">
+        <ion-label>Sim</ion-label>
+        <ion-radio color="blue" [checked]="checkedSim" id="configuracao-sim" (click)="configuracaoSelecionada('Sim')"
+          item-left mode="md"></ion-radio>
+      </ion-item>
+      <ion-item no-lines class="item-checkboxs">
+        <ion-label>Não</ion-label>
+        <ion-radio color="blue" [checked]="checkedNao" id="configuracao-nao" (click)="configuracaoSelecionada('Não')"
+          item-left mode="md"></ion-radio>
+      </ion-item>
+    </div>
+  </ion-col>
+</ion-row>

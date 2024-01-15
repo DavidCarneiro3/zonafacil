@@ -1,0 +1,91 @@
+// Lista Padrao (Utilizando placeholder %)
+// --------------------------------------------------
+// O mixin copia o codigo abaixo e cola onde estiver sendo chamado (include).
+// O placeholder (%), compartilha o mesmo trecho de codigo nas classes afim de tornar mais performatico (extend).
+@mixin placeholder-color($color) {
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { /* WebKit browsers */
+        color: $color;
+    }
+    input:-moz-placeholder, textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: $color;
+    }
+    input::-moz-placeholder, textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: $color;
+    }
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: $color;
+    }
+    input::placeholder, textarea::placeholder {
+        color: $color;
+    }
+}
+
+@mixin placeholder-size($size) {
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { /* WebKit browsers */
+        font-size: $size;
+    }
+    input:-moz-placeholder, textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        font-size: $size;
+    }
+    input::-moz-placeholder, textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+        font-size: $size;
+    }
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+        font-size: $size;
+    }
+    input::placeholder, textarea::placeholder {
+        font-size: $size;
+    }
+  }
+  
+  @mixin placeholder-padding($vertical, $horizontal) {
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { /* WebKit browsers */
+      margin: $vertical $horizontal;
+    }
+    input:-moz-placeholder, textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      margin: $vertical $horizontal;
+    }
+    input::-moz-placeholder, textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+      margin: $vertical $horizontal;
+    }
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+      margin: $vertical $horizontal;
+    }
+    input::placeholder, textarea::placeholder {
+      margin: $vertical $horizontal;
+    }
+  }
+  
+  @mixin placeholder-font($family, $weight) {
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { /* WebKit browsers */
+        font-family: $family;
+        font-weight: $weight;
+        padding: 2px 0;
+    }
+    input:-moz-placeholder, textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        font-family: $family;
+        font-weight: $weight;
+        padding: 2px 0;
+    }
+    input::-moz-placeholder, textarea::-moz-placeholder  { /* Mozilla Firefox 19+ */
+        font-family: $family;
+        font-weight: $weight;
+        padding: 2px 0;
+    }
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+        font-family: $family;
+        font-weight: $weight;
+        padding: 2px 0;
+    }
+    input::placeholder, textarea::placeholder {
+        font-family: $family;
+        font-weight: $weight;
+        padding: 2px 0;
+    }
+  }
+
+@mixin item-color($background-color: #fff, $text-color: #acacac) {
+    background-color: $background-color;
+    color: $text-color;
+}
+

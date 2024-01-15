@@ -1,0 +1,146 @@
+page-confirmar-cpf-modal {
+  .header-icon {
+    color: #fff;
+  }
+  
+
+  .grid-historico-estacionamento {
+    .row {
+      background-color: #fff;
+      border-bottom: 1px solid #f4f4f4;
+      margin-bottom: 20px;
+      height: auto;
+      overflow: block;
+      ion-col {
+        padding: 0;
+      }
+
+      ion-label {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      .col-info {
+        .placa {
+          text-align: left;
+          margin-bottom: 5px;
+          font-size: 12pt;
+          font-weight: normal;
+          color: #6c6c6c;
+          margin-top: 20px;
+          margin-left: 10px;
+          font-weight: 400;
+        }
+
+        .data {
+          text-align: left;
+          margin-bottom: 5px;
+          font-size: 9pt;
+          color: #7d7d7d;
+          word-break: break-word;
+          margin-top: 5px;
+          margin-left: 10px;
+          font-weight: 300;
+        }
+
+        .cidade {
+          color: #6d6d6d;
+          text-align: left;
+          font-size: 9.5pt;
+          margin-top: 5px;
+          margin-left: 10px;
+          font-weight: 400;
+        }
+      }
+
+      .col-status {
+        .status-renovacao {
+          background-color: #4cda64 !important;
+        }
+
+        .status-aquisicao {
+          background-color: #0690ce !important;
+        }
+
+        .status {
+          background-color: #fff;
+          height: 20px;
+          border-radius: 10px;
+          color: #fff;
+          float: right;
+          margin-top: 20px;
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-right: 5px;
+        }
+      }
+
+      .line {
+        border-bottom: 1px solid #f4f4f4;
+      }
+
+      .col-rodape-btn {
+        padding: 0 !important;
+        padding-right: 5px !important;
+      }
+
+      .col-rodape {
+        padding: 10px 0 10px 15px;
+
+        .cads {
+          text-align: left;
+          margin-left: 5px;
+          font-weight: normal;
+          color: #707070;
+          font-size: 11pt;
+        }
+
+        .price {
+          text-align: right;
+          font-weight: normal;
+          // color: #707070;
+          color: transparent;
+          font-size: 11pt;
+          font-weight: 300;
+        }
+
+        .recibo {
+          background: #adadad;
+        }
+      }
+    }
+  }
+
+  .col-select {
+    margin-bottom: 10px;
+    .item-select {
+      margin-left: 10%;
+
+      .title-select {
+        font-weight: normal;
+      }
+    }
+  }
+
+  .label {
+    font-size: 10pt;
+    font-weight: 500;
+    color: #6c6c6c;
+  }
+
+  .data-item {
+    background-color: transparent !important;
+    margin-bottom: 10px;
+    padding-right: 105px;
+    border: 1px solid red;
+    color: #333;
+  }
+  .rodape {
+    ion-row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

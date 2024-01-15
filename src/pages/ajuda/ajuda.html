@@ -1,0 +1,68 @@
+<ion-header no-border>
+    <ion-navbar color="header">
+        <button ion-button icon-only menuToggle>
+            <ion-icon class="header-icon" name="menu"></ion-icon>
+        </button>
+
+        <ion-title class="header-title">Ajuda</ion-title>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+    <ion-grid>
+       
+        <ion-row class="row-items">
+            <ion-item no-lines>
+                <h6>E-mail</h6>
+                <h4>{{cad.info.email}}</h4>
+            </ion-item>
+            <ion-item no-lines>
+                <h6>Telefone</h6>
+                <h4>{{cad.info.fone}}</h4>
+            </ion-item>
+            <ion-item no-lines>
+                <h6>Site</h6>
+                <h4 (click)="openPage(cad.info.site)">{{cad.info.site}}</h4>
+            </ion-item>
+            <ion-item no-lines>
+                <h6>Versão</h6>
+                <h4>{{versao}}</h4>
+            </ion-item>
+        </ion-row>
+        <ion-row class="row-social">
+            <ion-col class="col-facebook">
+                <div class="item-facebook" (click)="openPage(cad.info.facebook_url)">
+                    <img class="img" src="assets/icon/facebook.png">
+                </div>
+            </ion-col>
+            <ion-col class="col-google">
+                <div class="item-google" (click)="openPage(cad.info.google_url)">
+                    <img class="img" src="assets/icon/instagram.png">
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row class="row-informacoes">
+            <ion-col class="col-informacoes" col-12>
+                <button ion-button round outline class="btn"
+                    (click)="openPage(cad.info.info_page)">INFORMAÇÕES</button>
+            
+                <button ion-button round outline class="btn" (click)="openTerms()">TERMOS</button>
+           
+                <button ion-button round outline class="btn" (click)="goCompartilhar()">COMPARTILHAR</button>
+            </ion-col>
+        </ion-row>
+        <ion-row class="row-logo">
+            <ion-col class="col-logo">
+                <div class="item-logo">
+                    <img class="img" src="assets/imgs/logo-new.png">
+                </div>
+            </ion-col>
+            <ion-col class="col-logo">
+                <div class="item-logo">
+                    <img class="img" src="assets/imgs/logo-com-fundo.png">
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

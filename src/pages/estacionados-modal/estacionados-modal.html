@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar color="header" text-center>
+        <ion-title>
+            <ion-label>
+                Selecione seu veículo
+            </ion-label>
+        </ion-title>
+
+        <ion-buttons left>
+            <button ion-button icon-only (click)="dismiss()">
+                <span color="light" class="header-icon" showWhen="ios">Fechar</span>
+                <ion-icon name="md-arrow-back" class="header-icon" showWhen="android,windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar class="search" placeholder="Buscar por placa" color="primary" (ionInput)="procurarVeiculos($event)"></ion-searchbar>
+    <!-- <ion-list radio-group>
+        <ion-item *ngFor="let veiculo of veiculos" text-wrap>
+            <ion-label>
+                <p class="titulo">{{veiculo.veiculo.placa}}</p>
+                <p class="subtitulo">{{veiculo.veiculo.marca}} {{veiculo.veiculo.modelo}}</p>
+            </ion-label>
+            <ion-radio item-left slot="start" (ionSelect)="select(veiculo)" mode="md"></ion-radio>
+        </ion-item>
+    </ion-list> -->
+</ion-content>
+
+<ion-footer class="footer">
+    <ion-toolbar class="toolbar">
+        <ion-title>
+            <ion-row class="btn-rows">
+                <ion-col>
+                    <button ion-button block class="btn-cancelar" (click)="dismiss()" mode="md">Cancelar</button>
+                </ion-col>
+
+                <ion-col>
+                    <button ion-button block class="btn" (click)="selectVeiculo()"
+                        [disabled]="this.veiculoSelecionado.length <= 0" mode="md">OK</button>
+                </ion-col>
+            </ion-row>
+        </ion-title>
+    </ion-toolbar>
+</ion-footer>

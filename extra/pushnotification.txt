@@ -1,0 +1,10 @@
+1 - Abrir configurações do Projecto no Firebase > Cloud Message
+
+2 - No aplicativo IOS na opção Chave de autenticação de APNs , fazer o upload do arquivo FireBaseAPN.p8
+
+3- Inserir as Chaves:
+    #Codigo da Chave
+        AQD4DWJ2H3
+
+    #Codigo da equipe
+        6D75KDGD6T

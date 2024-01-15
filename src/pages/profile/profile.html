@@ -1,0 +1,68 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+    <button ion-button icon-only menuToggle>
+      <ion-icon class="header-icon" name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      <ion-label>Perfil</ion-label>
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openPerfilEditar()">
+        <ion-icon class="header-icon" name="icon-preferencias"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="content">
+  <ion-grid class="grid-profile">
+    <ion-thumbnail class="centralize">
+      <div class="profile-img">
+        <div>
+          <img src="{{user?.photo}}" class="img">
+        </div>
+      </div>
+    </ion-thumbnail>
+
+    <ion-row class="informacoes-header">
+      <ion-item no-lines>
+        <h4 class="text-name">{{user?.name}}</h4>
+        <h6 class="text-email">{{user?.email}}</h6>
+      </ion-item>
+    </ion-row>
+    <ion-row class="informacoes-body">
+      <ion-item class="btn-row">
+        <button ion-button (click)="showConfirm()" class="btn btn-password">Alterar a senha</button>
+      </ion-item>
+      <ion-item class="informacoes-body-header" mode="ios">
+        <ion-label class="title-header-body">INFORMAÇÕES DO USUÁRIO</ion-label>
+      </ion-item>
+      <ion-list class="informacoes-body-list" mode="ios">
+        <ion-item class="informacoes-body-list-item">
+          <h6>Nome</h6>
+          <h2>{{user?.name}}</h2>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item">
+          <h6>Data de Nascimento</h6>
+          <h2>{{user?.dateOfBirth | date: "dd/MM/yyyy"}}</h2>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item">
+          <h6>Email</h6>
+          <h2>{{user?.email}}</h2>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item">
+          <h6>Telefone</h6>
+          <h2>{{user?.phone}}</h2>
+        </ion-item>
+        <ion-item class="informacoes-body-list-item">
+          <h6>Sexo</h6>
+          <h2>{{user?.sex}}</h2>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

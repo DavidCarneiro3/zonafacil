@@ -1,0 +1,36 @@
+setores-modal {
+  font-family: "Roboto";
+
+  ion-buttons:hover {
+    cursor: pointer;
+  }
+
+  .item-radio.item-md ion-label {
+    text-align: start;
+    color: rgb(122, 121, 121) !important;
+  }
+
+  .item-radio.item-ios ion-label {
+    text-align: start;
+    color: rgb(122, 121, 121) !important;
+  }
+
+  .toolbar-md-header .bar-button-default-md,
+  .toolbar-md-header .bar-button-clear-md-default,
+  .toolbar-md-header .bar-button-md-default {
+    color: white;
+  }
+
+  .toolbar-ios-header .bar-button-default-ios,
+  .toolbar-ios-header .bar-button-default.bar-button-ios-default,
+  .toolbar-ios-header .bar-button-clear-ios-default {
+    color: white;
+  }
+
+  .rodape {
+    ion-row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
